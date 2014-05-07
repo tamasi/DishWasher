@@ -42,3 +42,7 @@ gem 'spring',        group: :development
 gem 'figaro'
 #Gem Devise for authentication 
 gem 'devise'
+
+group :development do
+	gem 'better_errors'
+end
