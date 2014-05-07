@@ -38,3 +38,7 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+#Gem for Environment Variables
+gem 'figaro'
+#Gem Devise for authentication 
+gem 'devise'
