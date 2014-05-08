@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140507152814) do
+ActiveRecord::Schema.define(version: 20140508143347) do
+
+  create_table "organizations", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_organizations", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -31,6 +42,8 @@ ActiveRecord::Schema.define(version: 20140507152814) do
     t.datetime "confirmation_sent_at"
     t.string   "uncofirmed_email"
     t.string   "username"
+    t.integer  "organization_id"
+    t.boolean  "is_admin"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

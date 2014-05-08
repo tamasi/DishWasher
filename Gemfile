@@ -42,6 +42,8 @@ gem 'spring',        group: :development
 gem 'figaro'
 #Gem Devise for authentication 
 gem 'devise'
+#Gem for upload files
+gem 'carrierwave'
 
 group :development do
 	gem 'better_errors'
