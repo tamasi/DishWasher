@@ -44,6 +44,8 @@ gem 'figaro'
 gem 'devise'
 #Gem for upload files
 gem 'carrierwave'
+#for use a gravatar image for each user
+gem 'gravtastic'
 
 group :development do
 	gem 'better_errors'
