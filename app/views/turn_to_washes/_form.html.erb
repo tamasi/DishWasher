@@ -1,0 +1,25 @@
+<%= form_for(@turn_to_wash) do |f| %>
+  <% if @turn_to_wash.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@turn_to_wash.errors.count, "error") %> prohibited this turn_to_wash from being saved:</h2>
+
+      <ul>
+      <% @turn_to_wash.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :dateturn %><br>
+    <%= f.date_select :dateturn %>
+  </div>
+  <div class="field">
+    <%= f.label :datename %><br>
+    <%= f.text_field :datename %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

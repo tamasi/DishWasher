@@ -47,6 +47,8 @@ gem 'carrierwave'
 #for use a gravatar image for each user
 gem 'gravtastic'
 
+gem 'rmagick'
+
 group :development do
 	gem 'better_errors'
 end

@@ -1,4 +1,4 @@
-<h1>Listing organizations</h1>
+<h1>Washer soldiers</h1>
 
 <table>
   <thead>
@@ -11,8 +11,11 @@
     <% @team.each do |team| %>
       <tr>
         <td><%= team.username %></td>
-        
-        
+        <% if team.user_avatar? %>
+          <td><%= image_tag team.user_avatar_url(:thumb).to_s %></td>
+        <% else %>
+          <td><%= image_tag avatar_url(team) %></td> <%# this line call the helper to obtain the gravatar for user -- rebuild properly%>
+        <% end -%>
       </tr>
     <% end %>
   </tbody>

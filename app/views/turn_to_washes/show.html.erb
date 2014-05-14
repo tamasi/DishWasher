@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Dateturn:</strong>
+  <%= @turn_to_wash.dateturn %>
+</p>
+
+<p>
+  <strong>Datename:</strong>
+  <%= @turn_to_wash.datename %>
+</p>
+
+<%= link_to 'Edit', edit_turn_to_wash_path(@turn_to_wash) %> |
+<%= link_to 'Back', turn_to_washes_path %>
