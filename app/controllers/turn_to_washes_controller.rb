@@ -26,6 +26,9 @@ class TurnToWashesController < ApplicationController
   def create
     @turn_to_wash = TurnToWash.new(turn_to_wash_params)
     @turn_to_wash.datename = @turn_to_wash.dateturn.strftime("%A")
+    if @turn_to_wash.datename == "Saturday" or @turn_to_wash.datename == "Sunday"
+      @turn_to_wash.is_weekend = true
+    end
     @turn_to_wash.save
     respond_to do |format|
       if @turn_to_wash.save

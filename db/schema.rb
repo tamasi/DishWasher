@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140514132210) do
+ActiveRecord::Schema.define(version: 20140514142305) do
 
   create_table "organizations", force: true do |t|
     t.string   "name"
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 20140514132210) do
     t.string   "datename"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_weekend"
+    t.boolean  "is_holiday"
   end
 
   create_table "user_organizations", force: true do |t|
