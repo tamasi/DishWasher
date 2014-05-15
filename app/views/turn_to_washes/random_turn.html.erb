@@ -1,0 +1,31 @@
+<h1>Listing turn_to_washes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Soldier</th>
+      <th>DateTurn</th>
+      <th>TurnToWash</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @turn.each do |turn| %>
+      <tr>
+        <td><%= turn.dateturn %></td>
+        <td><%= turn.datename %></td>
+        <td><%= turn.users %></td>
+               
+        <td><%#= link_to 'Show', turn_to_wash %></td>
+        <td><%#= link_to 'Edit', edit_turn_to_wash_path(turn_to_wash) %></td>
+        <td><%#= link_to 'Destroy', turn_to_wash, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Turn to wash', new_turn_to_wash_path %>
+<%= link_to 'Assign a wash day', random_turn_turn_to_washes_path %>

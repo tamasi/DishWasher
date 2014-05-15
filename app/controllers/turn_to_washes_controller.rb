@@ -65,6 +65,32 @@ class TurnToWashesController < ApplicationController
     end
   end
 
+  def random_turn
+    @team = User.org(current_user)
+    @dayturn = TurnToWash.todayid
+    @lastday = TurnToWash.last
+    @turn = TurnToWash.all
+    c = @dayturn.id
+    while c != 2082
+      @team.shuffle
+      @team.each do |soldier|
+        @us_turn = UserTurn.new
+        @us_turn.user_id = soldier.id
+        @day = TurnToWash.day(c)
+        #@day = TurnToWash.find_by(id: c)
+        if @day.is_weekend == true or @day.is_holiday == true
+          c +=1
+        else
+          @us_turn.turn_to_wash_id = c
+          c += 1
+        end
+        @us_turn.save
+      end
+    end
+    #format.html { redirect_to turn_to_wash_path, notice: 'Turn has assigned to soldiers.' }
+
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_turn_to_wash
@@ -73,6 +99,6 @@ class TurnToWashesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def turn_to_wash_params
-      params.require(:turn_to_wash).permit(:dateturn, :datename)
+      params.require(:turn_to_wash).permit(:dateturn, :datename, :is_weekend, :is_holiday)
     end
 end

@@ -15,4 +15,24 @@ namespace :load_dates do
   		end
   	end
 
+    
+    desc "Assign Turn to Wash to a soldier"
+    task assign_turn: :environment do
+      @team = User.where(organization_id: 3)
+      @dayturn = TurnToWash.todayid
+      @lastday = TurnToWash.last
+      c = @dayturn.id
+      while @dayturn.id != 2082
+        @team.shuffle
+        @team.each do |soldier|
+          @us_turn = UserTurn.new
+          @us_turn.user_id = soldier.id
+          @us_turn.turn_to_wash_id = c
+
+          @us_turn.save
+        end
+        @dayturn.id += 1
+        c += 1
+      end
+    end
 end

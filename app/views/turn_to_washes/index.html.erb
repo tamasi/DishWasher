@@ -5,6 +5,8 @@
     <tr>
       <th>Dateturn</th>
       <th>Datename</th>
+      <th>Is Weekend</th>
+      <th>Is Holiday</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,6 +16,8 @@
       <tr>
         <td><%= turn_to_wash.dateturn %></td>
         <td><%= turn_to_wash.datename %></td>
+        <td><%= turn_to_wash.is_weekend %></td>
+        <td><%= turn_to_wash.is_holiday %></td>
         <td><%= link_to 'Show', turn_to_wash %></td>
         <td><%= link_to 'Edit', edit_turn_to_wash_path(turn_to_wash) %></td>
         <td><%= link_to 'Destroy', turn_to_wash, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -25,3 +29,6 @@
 <br>
 
 <%= link_to 'New Turn to wash', new_turn_to_wash_path %>
+<%= link_to 'Assign a wash day', random_turn_turn_to_washes_path %>
+
+
