@@ -49,6 +49,7 @@ gem 'gravtastic'
 
 gem 'rmagick'
 
+gem 'has_scope'
 group :development do
 	gem 'better_errors'
 end

@@ -3,12 +3,14 @@ class User < ActiveRecord::Base
 	#set Relation between User and Organization
 	belongs_to :organizations
 
-  #Relation with turn_to_wash to establish the day to wash
-  has_many :user_turn
-  has_many :turn_to_wash, through: :user_turn
+  belongs_to :turns
+
 
   #query to bringing back only a user belongs to a organization
 	scope :org, -> (user) {where("organization_id = ?", user.organization_id)} 
+
+  #User.from_organization(organization)
+  scope :from_organization, -> (organization) { where(organization_id: organization) }
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -21,3 +23,5 @@ class User < ActiveRecord::Base
 
   mount_uploader :user_avatar, UserAvatarUploader
 end
+
+

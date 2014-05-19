@@ -67,27 +67,31 @@ class TurnToWashesController < ApplicationController
 
   def random_turn
     @team = User.org(current_user)
-    @dayturn = TurnToWash.todayid
+    @dayturn = TurnToWash.today
     @lastday = TurnToWash.last
     @turn = TurnToWash.all
     c = @dayturn.id
-    while c != 2082
+    f = @dayturn.dateturn.strftime("%m").to_i
+    while f < 365
       @team.shuffle
       @team.each do |soldier|
         @us_turn = UserTurn.new
         @us_turn.user_id = soldier.id
         @day = TurnToWash.day(c)
         #@day = TurnToWash.find_by(id: c)
-        if @day.is_weekend == true or @day.is_holiday == true
-          c +=1
-        else
-          @us_turn.turn_to_wash_id = c
-          c += 1
+        if @day.id != @lastday.id
+          if @day.is_weekend == true or @day.is_holiday == true
+            c +=1
+          else
+            @us_turn.turn_to_wash_id = c
+            c += 1
+          end
+          @us_turn.save
         end
-        @us_turn.save
+        f = @day.dateturn.strftime("%j").to_i + 1
       end
     end
-    #format.html { redirect_to turn_to_wash_path, notice: 'Turn has assigned to soldiers.' }
+    #format.html { redirect_to admins_path, notice: 'Turn has assigned to soldiers.' }
 
   end
 

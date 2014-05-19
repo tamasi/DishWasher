@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140514142305) do
+ActiveRecord::Schema.define(version: 20140519142325) do
 
   create_table "organizations", force: true do |t|
     t.string   "name"
@@ -19,13 +19,11 @@ ActiveRecord::Schema.define(version: 20140514142305) do
     t.datetime "updated_at"
   end
 
-  create_table "turn_to_washes", force: true do |t|
-    t.date     "dateturn"
-    t.string   "datename"
+  create_table "turns", force: true do |t|
+    t.date     "date_turn"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "is_weekend"
-    t.boolean  "is_holiday"
+    t.string   "user_id"
   end
 
   create_table "user_organizations", force: true do |t|
