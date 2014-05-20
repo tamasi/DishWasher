@@ -3,8 +3,7 @@ class AdminsController < ApplicationController
 	before_action :authenticate_admin!
 
 	def index
-		#@team = User.org(current_user)
-		@team = User.from_organization(current_user)
+		@team = User.from_organization(current_user.organization)
 	end
 	def new
 		@team = User.new

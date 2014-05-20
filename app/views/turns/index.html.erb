@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>Date turn</th>
+      <th>Username</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,7 +13,7 @@
     <% @turns.each do |turn| %>
       <tr>
         <td><%= turn.date_turn %></td>
-        <td><%= turn.user_id %></td>
+        <td><%= turn.user.username %></td>
         <td><%= link_to 'Show', turn %></td>
         <td><%= link_to 'Edit', edit_turn_path(turn) %></td>
         <td><%= link_to 'Destroy', turn, method: :delete, data: { confirm: 'Are you sure?' } %></td>
