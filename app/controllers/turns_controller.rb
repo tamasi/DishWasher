@@ -65,18 +65,20 @@ class TurnsController < ApplicationController
   def random_turn
       @team = User.from_organization(current_user.organization)
       day = Time.now.to_date
-      @team.shuffle
-      @team.each do |soldier|
-        @turn = Turn.new
-        @turn.user_id = soldier.id
-        if day.friday?
-          @turn.date_turn = day
-          day += 3
-        else
-          @turn.date_turn = day
-          day += 1 
+      while day.yday != 365
+        @team.shuffle
+        @team.each do |soldier|
+          @turn = Turn.new
+          @turn.user_id = soldier.id
+          if day.friday?
+            @turn.date_turn = day
+            day += 3
+          else
+            @turn.date_turn = day
+            day += 1 
+          end
+          @turn.save
         end
-        @turn.save
       end
       redirect_to turns_path
   end
