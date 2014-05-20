@@ -1,9 +1,9 @@
 class User < ActiveRecord::Base
 
 	#set Relation between User and Organization
-	belongs_to :organizations
+	belongs_to :organization
 
-  belongs_to :turns
+  has_many :turns
 
 
   #query to bringing back only a user belongs to a organization

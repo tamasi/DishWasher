@@ -61,6 +61,26 @@ class TurnsController < ApplicationController
     end
   end
 
+  #get /random_turn
+  def random_turn
+      @team = User.from_organization(current_user)
+      day = Time.now.to_date
+      @team.shuffle
+      @team.each do |soldier|
+        @turn = Turn.new
+        @turn.user_id = soldier.id
+        if day.strftime("%A") != 'Friday' 
+          @turn.date_turn = day
+          day += 1
+        else
+          @turn.date_turn = day
+          day += 3 
+        end
+        @turn.save
+      end
+      redirect_to admins_path
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_turn
@@ -69,6 +89,6 @@ class TurnsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def turn_params
-      params.require(:turn).permit(:date_turn)
+      params.require(:turn).permit(:date_turn, :user_id)
     end
 end

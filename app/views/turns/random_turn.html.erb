@@ -11,11 +11,11 @@
   </thead>
 
   <tbody>
-    <% @turn.each do |turn| %>
+    <% @team.each do |Soldier| %>
       <tr>
-        <td><%= turn.dateturn %></td>
-        <td><%= turn.datename %></td>
-        <td><%= turn.users %></td>
+        <td><%= soldier.organization %></td>
+        <td><%= soldier.username %></td>
+        <td><%= soldier.turn.first %></td>
                
         <td><%#= link_to 'Show', turn_to_wash %></td>
         <td><%#= link_to 'Edit', edit_turn_to_wash_path(turn_to_wash) %></td>
@@ -26,6 +26,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Turn to wash', new_turn_to_wash_path %>
-<%= link_to 'Assign a wash day', random_turn_turn_to_washes_path %>

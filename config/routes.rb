@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
 
-  resources :turns
+  resources :turns do
+    collection do
+      get :random_turn
+    end
+  end
 
   resources :organizations
 
   resources :admins
+    
   
   devise_for :users
 
