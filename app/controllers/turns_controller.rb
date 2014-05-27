@@ -1,10 +1,12 @@
 class TurnsController < ApplicationController
   before_action :set_turn, only: [:show, :edit, :update, :destroy]
-
+  has_scope :from_date
+  has_scope :to_date
   # GET /turns
   # GET /turns.json
   def index
-    @turns = Turn.all
+    @turns = apply_scopes(Turn)
+    #@turns = Turn.all
   end
 
   # GET /turns/1
@@ -28,7 +30,7 @@ class TurnsController < ApplicationController
 
     respond_to do |format|
       if @turn.save
-        format.html { redirect_to @turn, notice: 'Turn was successfully created.' }
+        format.html { redirect_to @turn, notice: 'Turn wash successfully created.' }
         format.json { render :show, status: :created, location: @turn }
       else
         format.html { render :new }
@@ -42,7 +44,7 @@ class TurnsController < ApplicationController
   def update
     respond_to do |format|
       if @turn.update(turn_params)
-        format.html { redirect_to @turn, notice: 'Turn was successfully updated.' }
+        format.html { redirect_to @turnh, notice: 'Turn wash successfully updated.' }
         format.json { render :show, status: :ok, location: @turn }
       else
         format.html { render :edit }
@@ -56,7 +58,7 @@ class TurnsController < ApplicationController
   def destroy
     @turn.destroy
     respond_to do |format|
-      format.html { redirect_to turns_url, notice: 'Turn was successfully destroyed.' }
+      format.html { redirect_to turns_url, notice: 'Turn wash successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -65,7 +67,8 @@ class TurnsController < ApplicationController
   def random_turn
       @team = User.from_organization(current_user.organization)
       day = Time.now.to_date
-      while day.yday != 365
+      f = Time.new.end_of_year.to_date
+      while day < f
         @team.shuffle
         @team.each do |soldier|
           @turn = Turn.new
@@ -91,6 +94,6 @@ class TurnsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def turn_params
-      params.require(:turn).permit(:date_turn, :user_id)
+      params.require(:turn).permit(:date_turn, :user_id, :miss)
     end
 end

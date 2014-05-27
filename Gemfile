@@ -50,6 +50,8 @@ gem 'gravtastic'
 gem 'rmagick'
 
 gem 'has_scope'
+
+gem 'simple_form'
 group :development do
 	gem 'better_errors'
 end

@@ -1,0 +1,751 @@
+/**************************************************************************************************************************
+***************************************************************************************************************************
+                              FONT & BODY
+***************************************************************************************************************************
+**************************************************************************************************************************/
+
+@import url(http://fonts.googleapis.com/css?family=Indie+Flower);
+
+body {
+  background: url(texture.jpg);
+}
+/**************************************************************************************************************************
+***************************************************************************************************************************
+                              HEADER
+***************************************************************************************************************************
+**************************************************************************************************************************/
+.logo-middle {
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+}
+header {
+  margin-bottom: -10px;
+}
+.logo-middle img {
+width: 700px;
+}
+.line {
+  border-top:15px dotted #f85d5d;
+  left: 0;
+  margin-top: -70px;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+.btn-default {
+  background-color: #eda7a9;
+  color: white;
+  font-weight: bold;
+  border: 1px solid #d2928e;
+}
+.btn-default:hover, .btn-default:active,.btn-default:focus,
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
+  background-color: #F85d5d !important;
+  border: 1px solid #ca4a4a !important;
+  color: white !important;
+}
+.container {
+  margin-top: 3px;
+}
+.menu {
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+}
+.navbar {
+  margin-bottom: -40px;
+}
+.navbar .container {
+  padding-left: 0;
+}
+.navbar-wrapper {
+  margin-bottom: 10px;
+}
+.dropdown-menu {
+  background-color: #fbf6f2; 
+}
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+  color: #5e4500;
+  background-color: #fff;
+}
+/**************************************************************************************************************************
+***************************************************************************************************************************
+                              CONTENT
+***************************************************************************************************************************
+**************************************************************************************************************************/
+.washer-list {
+  list-style: none;
+}
+.washer-list li {
+  margin-bottom: 10px;
+}
+.img-rounded {
+  border:3px solid #333;
+}
+.today-washer {
+  width: 100%;
+}
+.tomorrow-washer {
+  width: 45%;
+}
+.u-are-next {
+  background: url(arrow.png) no-repeat left bottom;
+  float: right;
+  height: 95px;
+  width: 50%;
+}
+.u-are-next p {
+  font-family: 'Indie Flower', cursive;
+  font-size: 20px;
+}
+.next-washer {
+  width: 20%;
+}
+.hulk-said {
+
+}
+h1, h2, h3, h4, h5 {
+  font-family: 'Indie Flower', cursive;
+}
+.bubble {
+  background: url(bubble.png) no-repeat top left;
+  height: 219px;
+  padding: 10px 0 0 60px;
+  width: 400px;
+}
+.username {
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+  margin-top: -45px;
+  padding-bottom: 2px;
+  padding-right: 10px;
+  padding-top: 4px;
+  position: relative;
+  text-align: right;
+  width: 100%;
+}
+.date {
+  background: url(calendary.png) no-repeat;
+  height: 214px;
+  width: 200px;
+}
+.month {
+  font-size: 40px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  padding-left: 10px;
+  padding-top: 42px;
+  text-align: center;
+  font-family: 'Indie Flower', cursive;
+}
+.day {
+  font-size: 80px;
+  text-align: center;
+  padding-left: 15px;
+  font-family: 'Indie Flower', cursive;
+}
+.pre-footer {
+  background: url(texture-2.jpg);
+  border-top: 3px solid #c3b06e;
+  margin-top: 75px;
+}
+.divider-dish {
+  background: url(divisor.png) no-repeat center;
+  border:none;
+  display: block;
+  height: 128px;
+  margin:20px 0;
+  text-align: center;
+  position: relative;
+  z-index:1;
+  margin-top: -65px;
+}
+.clear {
+  clear: both;
+}
+.pendant {
+  background: url(pendant.png) no-repeat top center;
+  width: 100%;
+  height: 100px;
+  position: relative;
+  z-index: 0;
+  margin-bottom: -40px;
+}
+.week-days {
+  font-size: 28px;
+  font-family: 'Indie Flower', cursive;
+}
+.table-bordered {
+  border: 2px solid #c3b06e;
+  box-shadow: -3px 3px 7px #555;
+  position: relative;
+  z-index: 2;
+}
+.table-responsive {
+  overflow: hidden;
+  float: none;
+  margin: 0 auto;
+}
+.whasher-list {
+  width: 100%;
+}
+.header tr th {
+  text-align: center;
+  background-color: #fff;
+}
+.washer-list li:hover {
+  transform: rotate(2deg);
+  -webkit-transform: rotate(2deg);
+  -moz-transform: rotate(2deg);
+  -o-transform: rotate(2deg);
+}
+/******* TO ACTIVE THE WASHER FOR TODAY *******/
+.wash_today {
+  background: #f85d5d !important;
+  border: none !important;
+  color: white;
+}
+tbody {
+  border: none;
+}
+/******* CALENDAR *******/
+#calendar {
+  width: 100%;
+  margin: 0 auto;
+  }
+.fc-view {
+  background: #fff;
+  box-shadow: -2px 10px 10px #666;
+  -webkit-box-shadow: -2px 10px 10px #666;
+  -moz-box-shadow: -2px 10px 10px #666;
+  -o-box-shadow: -2px 10px 10px #666;
+}
+.angry-hulk {
+  background: url(hulk-angry.gif) no-repeat top center;
+  width: 100%;
+  height: 243px;
+  position: relative;
+  z-index: 1;
+  margin-bottom: -49px;
+}
+.fc-header {
+  position: relative;
+  z-index: 2;
+}
+
+/**************************************************************************************************************************
+***************************************************************************************************************************
+                              LOGIN
+***************************************************************************************************************************
+**************************************************************************************************************************/
+.login-box {
+  background: #fff;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -o-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border:1px solid #eee;
+  box-shadow: 2px 2px 5px #444;
+  position: relative;
+  top: 100px;
+}
+.into-title {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.login-padding {
+  padding-top: 10px;
+}
+.login-botons {
+  padding:10px 0 20px 0;
+}
+.login-hulk {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(login-hulk.gif) no-repeat top right;
+  background-size: 100% 100%;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  overflow: hidden;
+  margin:0;
+  padding: 0;
+}
+/**************************************************************************************************************************
+***************************************************************************************************************************
+                              FOOTER
+***************************************************************************************************************************
+**************************************************************************************************************************/
+footer .comp {
+  float: left;
+}
+footer .dev{
+  float: right
+}
+
+/**************************************************************************************************************************
+***************************************************************************************************************************
+                              ANIMATIONS
+***************************************************************************************************************************
+**************************************************************************************************************************/
+.falling-today {
+  animation: fallToday linear 1s;
+  animation-iteration-count: 1;
+  -webkit-animation: fallToday linear 1s;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation: fallToday linear 1s;
+  -moz-animation-iteration-count: 1;
+  -o-animation: fallToday linear 1s;
+  -o-animation-iteration-count: 1;
+  -ms-animation: fallToday linear 1s;
+  -ms-animation-iteration-count: 1;
+  position: relative;
+}
+@-webkit-keyframes fallToday {
+  0% {
+    top: -636px;
+    -webkit-transform: rotate(0deg);
+    -webkit-transform-origin: bottom left;
+  }
+  10% {
+    -webkit-transform: rotate(0deg);
+  }
+  50% {
+    top: -636px;
+    -webkit-transform: rotate(90deg);
+  }
+  100% {
+    top: 0;
+    -webkit-transform: rotate(0deg);
+  }
+}
+@-moz-keyframes fallToday {
+  0% {
+    top: -636px;
+    -moz-transform: rotate(0deg);
+    -moz-transform-origin: bottom left;
+  }
+  10% {
+    -moz-transform: rotate(0deg);
+  }
+  50% {
+    top: -636px;
+    -moz-transform: rotate(90deg);
+  }
+  100% {
+    top: 0;
+    -moz-transform: rotate(0deg);
+  }
+}
+@-o-keyframes fallToday {
+  0% {
+    top: -636px;
+    -o-transform: rotate(0deg);
+    -o-transform-origin: bottom left;
+  }
+  10% {
+    -o-transform: rotate(0deg);
+  }
+  50% {
+    top: -636px;
+    -o-transform: rotate(90deg);
+  }
+  100% {
+    top: 0;
+    -o-transform: rotate(0deg);
+  }
+}
+@keyframes fallToday {
+  0% {
+    top: -636px;
+    transform: rotate(0deg);
+    transform-origin: bottom left;
+  }
+  10% {
+    transform: rotate(0deg);
+  }
+  50% {
+    top: -636px;
+    transform: rotate(90deg);
+  }
+  100% {
+    top: 0;
+    transform: rotate(0deg);
+  }
+}
+/********************************************/
+.falling-tomorrow {
+  -webkit-animation: fallTomorrow linear 1.5s;
+  -webkit-animation-iteration-count: 1;
+  -o-animation: fallTomorrow linear 1.5s;
+  -o-animation-iteration-count: 1;
+  -moz-animation: fallTomorrow linear 1.5s;
+  -moz-animation-iteration-count: 1;
+  animation: fallTomorrow linear 1.5s;
+  animation-iteration-count: 1;
+  position: relative;
+}
+@-webkit-keyframes fallTomorrow {
+  0% {
+    top: -636px;
+    -webkit-transform: rotate(720deg);
+    -webkit-transform-origin: bottom left;
+  }
+  50% {
+    top: -636px;
+    -webkit-transform: rotate(720deg);
+  }
+  100% {
+    top: 0;
+    -webkit-transform: rotate(0deg);
+  }
+}
+@-o-keyframes fallTomorrow {
+  0% {
+    top: -636px;
+    -o-transform: rotate(720deg);
+    -o-transform-origin: bottom left;
+  }
+  50% {
+    top: -636px;
+    -o-transform: rotate(720deg);
+  }
+  100% {
+    top: 0;
+    -o-transform: rotate(0deg);
+  }
+}
+@-moz-keyframes fallTomorrow {
+  0% {
+    top: -636px;
+    -moz-transform: rotate(720deg);
+    -moz-transform-origin: bottom left;
+  }
+  50% {
+    top: -636px;
+    -moz-transform: rotate(720deg);
+  }
+  100% {
+    top: 0;
+    -moz-transform: rotate(0deg);
+  }
+}
+@keyframes fallTomorrow {
+  0% {
+    top: -636px;
+    transform: rotate(720deg);
+    transform-origin: bottom left;
+  }
+  50% {
+    top: -636px;
+    transform: rotate(720deg);
+  }
+  100% {
+    top: 0;
+    transform: rotate(0deg);
+  }
+}
+/********************************************/
+.falling-next-1, .falling-next-2, .falling-next-3 {
+  -webkit-animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  position: relative;
+}
+.falling-next-1, .falling-next-2, .falling-next-3  {
+  -webkit-animation: fallNextOne linear 2s;
+  -o-animation: fallNextOne linear 2s;
+  -moz-animation: fallNextOne linear 2s;
+  animation: fallNextOne linear 2s;
+}
+@-webkit-keyframes fallNextOne {
+  0% {
+    -webkit-transform: scale(0);
+  }
+  80% {
+    -webkit-transform: scale(0);
+  }
+  90% {
+    -webkit-transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+  }
+}
+@-o-keyframes fallNextOne {
+  0% {
+    -o-transform: scale(0);
+  }
+  80% {
+    -o-transform: scale(0);
+  }
+  90% {
+    -o-transform: scale(1.2);
+  }
+  100% {
+    -o-transform: scale(1);
+  }
+}
+@-moz-keyframes fallNextOne {
+  0% {
+    -moz-transform: scale(0);
+  }
+  80% {
+    -moz-transform: scale(0);
+  }
+  90% {
+    -moz-transform: scale(1.2);
+  }
+  100% {
+    -moz-transform: scale(1);
+  }
+}
+@keyframes fallNextOne {
+  0% {
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(0);
+  }
+  90% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes fallNextTwo {
+  0% {
+    -webkit-transform: scale(0);
+  }
+  84% {
+    -webkit-transform: scale(0);
+  }
+  94% {
+    -webkit-transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+  }
+}
+@-o-keyframes fallNextTwo {
+  0% {
+    -o-transform: scale(0);
+  }
+  84% {
+    -o-transform: scale(0);
+  }
+  94% {
+    -o-transform: scale(1.2);
+  }
+  100% {
+    -o-transform: scale(1);
+  }
+}
+@-moz-keyframes fallNextTwo {
+  0% {
+    -moz-transform: scale(0);
+  }
+  84% {
+    -moz-transform: scale(0);
+  }
+  94% {
+    -moz-transform: scale(1.2);
+  }
+  100% {
+    -moz-transform: scale(1);
+  }
+}
+@keyframes fallNextTwo {
+  0% {
+    transform: scale(0);
+  }
+  84% {
+    transform: scale(0);
+  }
+  94% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes fallNextThree {
+  0% {
+    -webkit-transform: scale(0);
+  }
+  88% {
+    -webkit-transform: scale(0);
+  }
+  98% {
+    -webkit-transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+  }
+}
+@-o-keyframes fallNextThree {
+  0% {
+    -o-transform: scale(0);
+  }
+  88% {
+    -o-transform: scale(0);
+  }
+  98% {
+    -o-transform: scale(1.2);
+  }
+  100% {
+    -o-transform: scale(1);
+  }
+}
+@-moz-keyframes fallNextThree {
+  0% {
+    -moz-transform: scale(0);
+  }
+  88% {
+    -moz-transform: scale(0);
+  }
+  98% {
+    -moz-transform: scale(1.2);
+  }
+  100% {
+    -moz-transform: scale(1);
+  }
+}
+@keyframes fallNextThree {
+  0% {
+    transform: scale(0);
+  }
+  88% {
+    transform: scale(0);
+  }
+  98% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.u-are-next, .username {
+  -webkit-animation: appear linear 2s;
+  -o-animation: appear linear 2s;
+  -moz-animation: appear linear 2s;
+  animation: appear linear 2s;
+}
+@-webkit-keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  88% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  88% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  88% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  88% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#delay-hulk {
+  -webkit-animation-duration: .5s;
+  -webkit-animation-delay: 1.5s;
+  -o-animation-duration: .5s;
+  -o-animation-delay: 1.5s;
+  -moz-animation-duration: .5s;
+  -moz-animation-delay: 1.5s;
+  animation-duration: .5s;
+  animation-delay: 1.5s;
+}
+#delay-calendar {
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: 1.5s;
+  -o-animation-duration: 1s;
+  -o-animation-delay: 1.5s;
+  -moz-animation-duration: 1s;
+  -moz-animation-delay: 1.5s;
+  animation-duration: 1s;
+  animation-delay: 1.5s;
+}
+.logo-middle {
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: 2s;
+  -o-animation-duration: 1s;
+  -o-animation-delay: 2s;
+  -moz-animation-duration: 1s;
+  -moz-animation-delay: 2s;
+  animation-duration: 1s;
+  animation-delay: 2s;
+}
+.navbar-nav {
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: 2.5s;
+  -o-animation-duration: 1s;
+  -o-animation-delay: 2.5s;
+  -moz-animation-duration: 1s;
+  -moz-animation-delay: 2.5s;
+  animation-duration: 1s;
+  animation-delay: 2.5s;
+}
+/****************************************** my-turn page **************************************************************/
+.secondary {
+  -webkit-animation-delay: 0.5s !important;
+  -o-animation-delay: 0.5s !important;
+  -moz-animation-delay: 0.5s !important;
+  animation-delay: 0.5s !important;
+}
+.angry-hulk {
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: 3s;
+  -o-animation-duration: 1s;
+  -o-animation-delay: 3s;
+  -moz-animation-duration: 1s;
+  -moz-animation-delay: 3s;
+  animation-duration: 1s;
+  animation-delay: 3s;
+}

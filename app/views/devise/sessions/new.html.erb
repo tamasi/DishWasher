@@ -1,17 +1,47 @@
-<h2>Sign in</h2>
+    <div class="container">
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div><%= f.label :username %><br />
-  <%= f.text_field :username, autofocus: true %></div>
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-sm-4 col-sm-offset-4 login-box text-center">
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <h3 class="into-title">Sign in to <a href="index.html">DishWasher</a></h3>
+              <div class="col-sm-12 form-group input-group login-padding">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <%= f.text_field :username, autofocus: true, class: 'form-control', placeholder: 'User' %>
+                <%#input class="form-control" type="text" placeholder="User" id="date1"> %>
+              </div>
 
-  <div><%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
+              <div class="col-sm-12 form-group input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'Password' %>
+              </div>
 
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-  <% end -%>
+              <div class="login-botons">
+                <a href="index.html" class="btn btn-default btn-lg">Back Home</a>
+                <%= f.submit "Log In", class: 'btn btn-success btn-lg' %><br/>
+                <%#button type="submit" class="btn btn-success btn-lg">Log In</button> %>
+                <%= render "devise/shared/links" %>
+              </div>
+            <% end %>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+    </div><!-- /.container -->
 
-  <div><%= f.submit "Sign in" %></div>
-<% end %>
+    <div class="container-fluid">
+      <!-- /END THE FEATURETTES -->     
+      <div class="login-hulk"></div>
+      <!-- FOOTER -->
+    </div>
 
-<%= render "devise/shared/links" %>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!--link href="css/style.css" rel="stylesheet" -->
+    
+    <script>
+      wow = new WOW(
+        {
+          offset:       200          // default
+        }
+      )
+      new WOW().init();
+    </script>
+

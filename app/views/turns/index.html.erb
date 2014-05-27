@@ -1,10 +1,143 @@
-<h1>Listing turns</h1>
+    <div class="navbar-wrapper">
+
+      <div class="container">
+        <div class="navbar navbar-static-top" role="navigation">
+          <div class="container">
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav animated fadeInDown">
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle btn btn-default menu" data-toggle="dropdown"><i class="glyphicon glyphicon-th-list"></i> Navegation <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="my-turn.html"><i class="glyphicon glyphicon-calendar"></i> Full Calendar</a></li>
+                    <li><a href="my-turn.html"><i class="glyphicon glyphicon-question-sign"></i> When I Wash</a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header">Configuration</li>
+                    <li><a href="admin/index.html"><i class="glyphicon glyphicon-cog"></i> Edit Profile</a></li>
+                    <li><a href="admin/settings.html"><i class="glyphicon glyphicon-user"></i> Settings</a></li>
+                    <li><a href="login.html"><i class="glyphicon glyphicon-log-out"></i> Log In</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <header>
+        <div class="logo-middle animated lightSpeedIn">
+          <%= link_to image_tag('logo.png'), admins_path %>
+          <div class="line"></div>
+        </div>
+      </header>
+    </div>
+
+    <div class="container">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-sm-3">
+          <ul class="washer-list">
+          <% @turns.each do |turn| %>
+            <% if turn.user.user_avatar? %>
+              <li><%= image_tag turn.user.user_avatar_url(:thumb).to_s, class: 'img-rounded next-washer falling-next-3' %></li>
+            <% else %>
+              <li><%= image_tag avatar_url(turn.user) %></li>
+            <% end %>
+          <% end %>
+            <li></li>
+            <li><%= link_to image_tag('1.jpg', class: 'img-rounded next-washer falling-next-3'), admins_path%></li>
+            <li><%= link_to image_tag('2.jpg', class: 'img-rounded next-washer falling-next-2'), admins_path%></li>
+            <li><%= link_to image_tag('10.jpg', class: 'img-rounded next-washer falling-next-1'), admins_path%></li>
+            <li>
+              <div class="u-are-next"><p>Are you Ready?</p></div>
+              <%= link_to image_tag('6.jpg', class: 'img-rounded tomorrow-washer falling-tomorrow'), admins_path%>
+            </li>
+            <li>
+              <%= link_to image_tag(@turns[0].user.user_avatar_url(:thumb).to_s, class: 'img-rounded today-washer falling-today'), admins_path %>
+              <h3 class="username"><%= @turns[0].user.username %></h3>
+            </li>
+          </ul>
+        </div><!-- /.col-lg-4 -->
+
+        <div id="delay-hulk" class="col-sm-6 animated bounceIn">
+          <div class="bubble">
+            <h2>Lets play <strong>Hulk Said!</strong>.</h2>
+            <h3>I Said he going to clean dishes today!</h3>
+          </div>
+          <%= image_tag('hulk-said.gif', class: 'hulk-said') %>
+        </div><!-- /.col-lg-4 -->
+
+        <div id="delay-calendar" class="col-sm-3 animated bounceInDown">
+          <div class="date">
+            <p class="month">May</p>
+            <p class="day">30</p>
+          </div>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+    </div><!-- /.container -->
+
+    <div class="container-fluid pre-footer">
+      <!-- START THE FEATURETTES -->
+
+      <hr class="divider-dish wow animated slideInLeft">
+
+      <!-- /END THE FEATURETTES -->
+
+      <div class="col-sm-12">
+        <div class="col-sm-6 table-responsive wow animated fadeInDown">
+          <div class="pendant"></div>
+          <table class="table table-bordered">
+            <thead class="header">
+              <tr>
+                <th colspan="5">Washers of the Week</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr class="active text-center week-days">
+              <td>Mon</td>
+              <td>Tue</td>
+              <td class="wash_today">Wed</td>
+              <td>Thu</td>
+              <td>Fri</td>
+            </tr>
+            <tr class="active">
+              <td><%= image_tag('5.jpg', class: 'whasher-list') %></td>
+              <td><%= image_tag('3.jpg', class: 'whasher-list') %></td>
+              <td class="wash_today"><%= image_tag('4.jpg', class: 'whasher-list') %></td>
+              <td><%= image_tag('6.jpg', class: 'whasher-list') %></td>
+              <td><%= image_tag('10.jpg', class: 'whasher-list') %></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="marquee"></div>
+      </div><!-- /.col-lg-4 -->      
+      <div class="clear"></div>
+      <!-- FOOTER -->
+      <footer class="animated fadeInUp">
+        <p class="comp"><a href="http://hashdog.io">Dishwasher App</a> - 2014</p>
+        <p class="dev">By <a href="http://www.hashdog.com">Hashdog Software Factory</a>.</p>
+      </footer>
+
+    </div>
+
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script>
+      wow = new WOW(
+        {
+          offset:       200          // default
+        }
+      )
+      new WOW().init();
+    </script><h1>Listing turns</h1>
 
 <table>
   <thead>
     <tr>
       <th>Date turn</th>
       <th>Username</th>
+      <th>Avatar</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,6 +147,12 @@
       <tr>
         <td><%= turn.date_turn %></td>
         <td><%= turn.user.username %></td>
+        <% if turn.user.user_avatar? %>
+          <td><%= image_tag turn.user.user_avatar_url(:thumb).to_s %></td>
+        <% else %>
+          <td><%= image_tag avatar_url(turn.user) %></td>
+        <% end %>
+        </td>
         <td><%= link_to 'Show', turn %></td>
         <td><%= link_to 'Edit', edit_turn_path(turn) %></td>
         <td><%= link_to 'Destroy', turn, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -25,3 +164,21 @@
 <br>
 
 <%= link_to 'New Turn', new_turn_path %>
+
+<%= link_to 'Log Out', destroy_user_session_path, :method => :delete %>
+
+
+<ul class="washer-list">
+            <li></li>
+            <li><%= link_to image_tag('1.jpg', class: 'img-rounded next-washer falling-next-3'), admins_path%></li>
+            <li><%= link_to image_tag('2.jpg', class: 'img-rounded next-washer falling-next-2'), admins_path%></li>
+            <li><%= link_to image_tag('10.jpg', class: 'img-rounded next-washer falling-next-1'), admins_path%></li>
+            <li>
+              <div class="u-are-next"><p>Are you Ready?</p></div>
+              <%= link_to image_tag('6.jpg', class: 'img-rounded tomorrow-washer falling-tomorrow'), admins_path%>
+            </li>
+            <li>
+              <%= link_to image_tag(@turns[0].user.user_avatar_url(:thumb).to_s, class: 'img-rounded today-washer falling-today'), admins_path %>
+              <h3 class="username"><%= @turns[0].user.username %></h3>
+            </li>
+          </ul>

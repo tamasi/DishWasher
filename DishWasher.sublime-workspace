@@ -1,0 +1,725 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ima",
+				"image_tag"
+			],
+			[
+				"belongs",
+				"belongs_to"
+			],
+			[
+				"organiz",
+				"Organization"
+			],
+			[
+				"st",
+				"strftime"
+			],
+			[
+				"da",
+				"dateturn"
+			],
+			[
+				"to",
+				"to_i"
+			],
+			[
+				"action",
+				"action_mailer"
+			],
+			[
+				"cust",
+				"cust"
+			],
+			[
+				"h",
+				"holiday"
+			],
+			[
+				"para",
+				"params"
+			],
+			[
+				"holiday",
+				"holiday_hash"
+			],
+			[
+				"de",
+				"def	def … end"
+			],
+			[
+				"custo",
+				"customers"
+			],
+			[
+				"im",
+				"image_tag"
+			],
+			[
+				"do",
+				"do"
+			],
+			[
+				"cal",
+				"cla	class .. < ParentClass .. initialize .. end"
+			],
+			[
+				"pa",
+				"pais"
+			],
+			[
+				"ho",
+				"holidays"
+			],
+			[
+				"els",
+				"else"
+			],
+			[
+				"holi",
+				"Holidays"
+			],
+			[
+				"user",
+				"user_holidays"
+			],
+			[
+				"customer",
+				"customer_upnot"
+			],
+			[
+				"cus",
+				"customers"
+			],
+			[
+				"c",
+				"clafn	class_from_name()"
+			],
+			[
+				"customernotify",
+				"customersnotify"
+			],
+			[
+				"noti",
+				"notify"
+			],
+			[
+				"up",
+				"update"
+			],
+			[
+				"che",
+				"check_auth"
+			],
+			[
+				"cu",
+				"current_user"
+			],
+			[
+				"link",
+				"link_to"
+			],
+			[
+				"reso",
+				"resource_name"
+			],
+			[
+				"resource",
+				"resource_name"
+			],
+			[
+				"bor",
+				"border-radius"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"lin",
+				"link_to"
+			],
+			[
+				"tra",
+				"trackForm"
+			],
+			[
+				"fir",
+				"firstScript"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"metho",
+				"method"
+			],
+			[
+				"method",
+				"methods"
+			],
+			[
+				"an",
+				"analytics"
+			],
+			[
+				"a",
+				"analytics"
+			],
+			[
+				"per",
+				"perform"
+			],
+			[
+				"ac",
+				"action_mailer"
+			],
+			[
+				"su",
+				"subscribe"
+			],
+			[
+				"sel",
+				"self"
+			],
+			[
+				"for",
+				"form"
+			],
+			[
+				"co",
+				"column"
+			],
+			[
+				"in",
+				"input"
+			],
+			[
+				"fo",
+				"form"
+			],
+			[
+				"fl",
+				"flash"
+			],
+			[
+				"birt",
+				"birthday"
+			],
+			[
+				"b",
+				"birthday"
+			],
+			[
+				"tr",
+				"true"
+			],
+			[
+				"gr",
+				"group"
+			],
+			[
+				"g",
+				"gem"
+			],
+			[
+				"r",
+				"bootstrap_and_overrides.css.less"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"cl",
+				"cla	class .. < ParentClass .. initialize .. end"
+			],
+			[
+				"redi",
+				"redirect_to"
+			],
+			[
+				"log",
+				"logout"
+			],
+			[
+				"ph",
+				"photo"
+			],
+			[
+				"photo",
+				"photo_filename"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"fot",
+				"footer	Tag"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/models/turn.rb",
+			"settings":
+			{
+				"buffer_size": 167,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/turns/index.html.erb",
+			"settings":
+			{
+				"buffer_size": 5920,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/turns_controller.rb",
+			"settings":
+			{
+				"buffer_size": 2426,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"fe",
+				"Fetch: Package"
+			],
+			[
+				"fetc",
+				"Fetch: Package"
+			],
+			[
+				"fet",
+				"Fetch: Package"
+			],
+			[
+				"sideba",
+				"View: Toggle Side Bar"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"pa",
+				"Package Control: List Packages"
+			],
+			[
+				"pac",
+				"Package Control: Remove Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib2,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler()) ); by = urllib2.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); open( os.path.join( ipp, pf), 'wb' ).write(by) if dh == h else None; print('Error validating download (got %s instead of %s), please try manual install' % (dh, h) if dh != h else 'Please restart Sublime Text to finish installation')"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/hernan/Documentos/DishWasher/DishWasher/app/assets/stylesheets/fullcalendar.css.scss",
+		"/home/hernan/Documentos/DishWasher/login.html",
+		"/home/hernan/Documentos/DishWasher/DishWasher/Gemfile",
+		"/home/hernan/Documentos/DishWasher/DishWasher/app/assets/stylesheets/style.css.scss",
+		"/home/hernan/Documentos/DishWasher/DishWasher/app/assets/stylesheets/bootstrap.css.scss",
+		"/home/hernan/Documentos/DishWasher/DishWasher/app/assets/stylesheets/bootstrap-theme.css.map.scss",
+		"/home/hernan/Documentos/DishWasher/DishWasher/app/assets/stylesheets/bootstrap.css.map.scss",
+		"/home/hernan/Documentos/DishWasher/DishWasher/app/views/admins/index.html.erb",
+		"/home/hernan/Documentos/DishWasher/DishWasher/app/views/washer_mail/washer_turn_mail.html.erb",
+		"/home/hernan/Documentos/DishWasher/DishWasher/config/routes.rb",
+		"/home/hernan/Documentos/DishWasher/DishWasher/app/views/turns/random_turn.html.erb",
+		"/home/hernan/Documentos/DishWasher/DishWasher/app/controllers/admins_controller.rb",
+		"/home/hernan/Documentos/DishWasher/DishWasher/app/models/user.rb",
+		"/home/hernan/Documentos/DishWasher/DishWasher/db/schema.rb",
+		"/home/hernan/Documentos/DishWasher/DishWasher/db/migrate/20140519203047_remove_colum_from_users.rb",
+		"/home/hernan/Documentos/DishWasher/DishWasher/db/migrate/20140519143508_add_turn_id_to_user.rb",
+		"/home/hernan/Documentos/DishWasher/DishWasher/db/migrate/20140519142325_add_colum_to_turn.rb",
+		"/home/hernan/Documentos/DishWasher/DishWasher/app/views/turns/_form.html.erb",
+		"/home/hernan/Documentos/DishWasher/DishWasher/app/views/turns/index.html.erb",
+		"/home/hernan/Documentos/DishWasher/DishWasher/db/migrate/20140519131210_drop_table_user_turn.rb",
+		"/home/hernan/Documentos/DishWasher/DishWasher/app/controllers/turn_to_washes_controller.rb",
+		"/home/hernan/Documentos/DishWasher/DishWasher/app/models/turn_to_wash.rb",
+		"/home/hernan/Documentos/DishWasher/DishWasher/db/migrate/20140519130825_drop_table_tur_to_wash.rb",
+		"/home/hernan/Documentos/DishWasher/DishWasher/app/controllers/application_controller.rb",
+		"/home/hernan/Documentos/DishWasher/DishWasher/config/initializers/devise.rb",
+		"/home/hernan/Documentos/DishWasher/DishWasher/config/application.yml",
+		"/home/hernan/Documentos/DishWasher/DishWasher/config/environments/development.rb",
+		"/home/hernan/Documentos/DishWasher/DishWasher/app/views/devise/sessions/new.html.erb",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/db/migrate/20140315130257_add_column_to_users.rb",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/app/views/holidays/index.html.erb",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/app/views/customer_mail/notification_mail.html.erb",
+		"/home/hernan/Descargas/RAILS/error hr",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/app/views/customers/index.html.erb",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/app/controllers/customers_controller.rb",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/app/models/customer.rb",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/config/application.rb",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/config/routes.rb",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/app/views/customers/_form.html.erb",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/lib/tasks/sendMailCustomer.rake",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/app/models/user.rb",
+		"/media/00167C1E167C16BE/Documents and Settings/hernan/Downloads/PELIS/Frozen (2013) 1080p esp/POR FAVOR!.....COMPARTAN!.txt",
+		"/media/00167C1E167C16BE/Documents and Settings/hernan/Downloads/PELIS/Frozen (2013) 1080p esp/Leer.txt",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/config/application.yml",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/config/database.yml",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/config/environments/production.rb",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/Gemfile",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/config/initializers/devise.rb",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/app/mailers/customer_mail.rb",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/.bundle/config",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/config/environments/development.rb",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/app/views/pages/home.html.erb",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/app/assets/images/customer_satisfaction",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/customers.js.coffee",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/app/controllers/contacts_controller.rb",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/app/views/holidays/show.html.erb",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/app/views/layouts/_navigation.html.erb",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/app/views/holidays/_form.html.erb",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/app/views/pages/contact.html.erb",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/app/views/holidays/edit.html.erb",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/app/views/customers/new.html.erb",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/app/views/holidays/new.html.erb",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/app/views/customers/show.html.erb",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/app/views/layouts/_navigation_links.html.erb",
+		"/home/hernan/Documentos/learn-rails/learn-rails/Gemfile",
+		"/home/hernan/Documentos/learn-rails/learn-rails/config/environments/production.rb",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/app/views/customers/edit.html.erb",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/app/assets/stylesheets/framework_and_overrides.css.scss",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/app/assets/scaffolds.css.scss",
+		"/home/hernan/Documentos/learn-rails/learn-rails/config/environments/development.rb",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/app/assets/stylesheets/scaffolds.css.scss",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/app/views/devise/registrations/new.html.erb",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/app/models/holiday.rb",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/app/controllers/holidays_controller.rb",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/db/migrate/20140326150528_create_user_holidays.rb",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/app/models/user_holiday.rb",
+		"/home/hernan/.local/share/vlc/lua/extensions/vlsub-master/vlsub.lua",
+		"/home/hernan/Descargas/Takedown.The.DNA.of.GSP.2014.DVDRip.x264-G3LHD[rarbg]/RARBG.com.txt",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/app/views/customers/_edit_notify.html.erb",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/app/assets/javascripts/application.js",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/app/assets/javascripts/bootstrap.js",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/app/assets/javascripts/customers.js.coffee",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/app/controllers/application_controller.rb",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/app/views/devise/sessions/new.html.erb",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/db/migrate/20140319143633_add_column_to_customer.rb",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/public/index.html.erb",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/app/views/devise/sessions/_new.html.erb",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/public/index.html",
+		"/home/hernan/Documentos/HolidayReminder/holiday-raminder/app/assets/stylesheets/bootstrap_config.scss",
+		"/home/hernan/Descargas/RAILS/archivo nuevo",
+		"/home/hernan/Documentos/rails-devise-bootstrap/bootstrap-devise-cancan/app/views/devise/registrations/new.html.erb",
+		"/home/hernan/Documentos/rails-devise-bootstrap/bootstrap-devise-cancan/app/views/devise/registrations/edit.html.erb",
+		"/home/hernan/Documentos/rails-devise-bootstrap/bootstrap-devise-cancan/config/routes.rb",
+		"/home/hernan/Documentos/rails-devise-bootstrap/bootstrap-devise-cancan/config/application.rb",
+		"/home/hernan/Documentos/rails-devise-bootstrap/bootstrap-devise-cancan/config/application.yml",
+		"/home/hernan/Documentos/rails-devise-bootstrap/bootstrap-devise-cancan/app/models/user.rb",
+		"/home/hernan/Documentos/rails-devise-bootstrap/bootstrap-devise-cancan/db/migrate/20140312194027_add_name_to_users.rb",
+		"/home/hernan/Documentos/rails-devise-bootstrap/bootstrap-devise-cancan/app/views/devise/sessions/new.html.erb",
+		"/home/hernan/Documentos/rails-devise-bootstrap/bootstrap-devise-cancan/app/controllers/application_controller.rb",
+		"/home/hernan/Documentos/rails-devise-bootstrap/bootstrap-devise-cancan/app/assets/stylesheets/bootstrap_and_overrides.css.scss",
+		"/home/hernan/Documentos/rails-devise-bootstrap/bootstrap-devise-cancan/app/views/layouts/_navigation.html.erb",
+		"/home/hernan/Documentos/rails-devise-bootstrap/bootstrap-devise-cancan/app/views/layouts/application.html.erb",
+		"/home/hernan/Documentos/rails-devise-bootstrap/bootstrap-devise-cancan/app/models/ability.rb",
+		"/home/hernan/Documentos/rails-devise-bootstrap/bootstrap-devise-cancan/config/initializers/devise.rb",
+		"/home/hernan/Descargas/RAILS/RailsApps_Tutorials_Hoboes.vcf",
+		"/home/hernan/Documentos/rails-devise-bootstrap/bootstrap-devise-cancan/app/helpers/application_helper.rb",
+		"/home/hernan/Documentos/rails-devise-bootstrap/bootstrap-devise-cancan/app/assets/stylesheets/application.css.scss",
+		"/home/hernan/Documentos/rails-devise-bootstrap/bootstrap-devise-cancan/app/views/layouts/_messages.html.erb",
+		"/home/hernan/Documentos/rails-devise-bootstrap/bootstrap-devise-cancan/app/assets/javascripts/application.js",
+		"/home/hernan/Documentos/rails-devise-bootstrap/bootstrap-devise-cancan/Gemfile",
+		"/home/hernan/Documentos/rails-devise-bootstrap/bootstrap-devise-cancan/README.rdoc",
+		"/home/hernan/Documentos/learn-rails/learn-rails/app/assets/javascripts/segmentio.js",
+		"/home/hernan/Documentos/learn-rails/learn-rails/app/views/visitors/new.html.erb",
+		"/home/hernan/Documentos/learn-rails/learn-rails/app/views/pages/about.html.erb",
+		"/home/hernan/Documentos/learn-rails/learn-rails/config/database.yml",
+		"/home/hernan/Documentos/learn-rails/learn-rails/config/application.yml",
+		"/home/hernan/Documentos/learn-rails/learn-rails/public/robots.txt",
+		"/home/hernan/Documentos/learn-rails/learn-rails/app/models/visitor.rb",
+		"/home/hernan/Documentos/learn-rails/learn-rails/config/routes.rb",
+		"/home/hernan/Documentos/learn-rails/learn-rails/app/controllers/visitors_controller.rb",
+		"/home/hernan/Documentos/learn-rails/learn-rails/app/models/owner.rb",
+		"/home/hernan/Documentos/learn-rails/learn-rails/app/models/contact.rb",
+		"/home/hernan/Documentos/learn-rails/learn-rails/app/views/user_mailer/contact_email.text.erb",
+		"/home/hernan/Documentos/learn-rails/learn-rails/app/views/user_mailer/contact_email.html.erb",
+		"/home/hernan/Documentos/learn-rails/learn-rails/app/mailers/user_mailer.rb",
+		"/home/hernan/Documentos/learn-rails/learn-rails/app/controllers/contacts_controller.rb",
+		"/home/hernan/Documentos/learn-rails/learn-rails/app/views/contacts/new.html.erb",
+		"/home/hernan/Documentos/learn-rails/learn-rails/app/views/layouts/_navigation_links.html.erb",
+		"/home/hernan/Documentos/learn-rails/learn-rails/app/views/pages/contact.html.erb"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"hulk",
+			"/",
+			"../",
+			"font-face",
+			"gliphi",
+			"../img/",
+			"action_mailer",
+			"before",
+			"      </",
+			"mailer",
+			"mailes",
+			"device",
+			"sqlite3",
+			"col",
+			"index",
+			"match"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/models/turn.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 167,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								153,
+								153
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/views/turns/index.html.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5920,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1746,
+								1746
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1845.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/controllers/turns_controller.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2426,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								229,
+								229
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "DishWasher.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"gem",
+				"Gemfile"
+			],
+			[
+				"dev",
+				"config/environments/development.rb"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 254.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
