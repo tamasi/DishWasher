@@ -37,24 +37,37 @@
       <div class="row">
         <div class="col-sm-3">
           <ul class="washer-list">
-          <% @turns.each do |turn| %>
-            <% if turn.user.user_avatar? %>
-              <li><%= image_tag turn.user.user_avatar_url(:thumb).to_s, class: 'img-rounded next-washer falling-next-3' %></li>
-            <% else %>
-              <li><%= image_tag avatar_url(turn.user) %></li>
-            <% end %>
-          <% end %>
             <li></li>
-            <li><%= link_to image_tag('1.jpg', class: 'img-rounded next-washer falling-next-3'), admins_path%></li>
-            <li><%= link_to image_tag('2.jpg', class: 'img-rounded next-washer falling-next-2'), admins_path%></li>
-            <li><%= link_to image_tag('10.jpg', class: 'img-rounded next-washer falling-next-1'), admins_path%></li>
-            <li>
+            <% if @turns[4].user.user_avatar? %>
+              <li>
+                <%= link_to image_tag(@turns[4].user.user_avatar_url(:thumb).to_s, class: 'img-rounded nexwasher falling-next-3'), admins_path%><span> <p> <%= @turns[4].date_turn %> </p></span>
+              </li>
+            <% else %>
+              <li><%= link_to image_tag(avatar_url(@turns[4].user), class: 'img-rounded nexwasher falling-next-3'), admins_path %><span> <p> <%= @turns[4].date_turn %> </p></span></li>
+            <% end %>
+            
+            <% if @turns[3].user.user_avatar? %>
+              <li>
+                <%= link_to image_tag(@turns[3].user.user_avatar_url(:thumb).to_s, class: 'img-rounded next-washer falling-next-2'), admins_path%><span> <p> <%= @turns[3].date_turn %> </p></span>
+              </li>
+            <% else %>
+              <li><%= link_to image_tag(avatar_url(@turns[3].user), class: 'img-rounded nexwasher falling-next-2'), admins_path %><span> <p> <%= @turns[3].date_turn %> </p></span></li>
+            <% end %>
+            
+            <% if @turns[2].user.user_avatar? %>
+              <li><%= link_to image_tag(@turns[2].user.user_avatar_url(:thumb).to_s, class: 'img-rounded next-washer falling-next-1'), admins_path%><span> <p> <%= @turns[2].date_turn %> </p></span></li>
+              
+            <% else %>
+              <li><%= image_tag avatar_url(@turns[2].user), class: 'img-rounded nexwasher falling-next-1' %><span> <p> <%= @turns[2].date_turn %> </p></span></li>
+            <% end %>
+            
               <div class="u-are-next"><p>Are you Ready?</p></div>
-              <%= link_to image_tag('6.jpg', class: 'img-rounded tomorrow-washer falling-tomorrow'), admins_path%>
+              <%= link_to image_tag(@turns[1].user.user_avatar_url(:thumb).to_s, class: 'img-rounded tomorrow-washer falling-tomorrow'), admins_path%> <span> <p> <%= @turns[1].date_turn %> </p></span>
             </li>
             <li>
               <%= link_to image_tag(@turns[0].user.user_avatar_url(:thumb).to_s, class: 'img-rounded today-washer falling-today'), admins_path %>
               <h3 class="username"><%= @turns[0].user.username %></h3>
+              <span> <p> <%= @turns[0].date_turn %> </p></span>
             </li>
           </ul>
         </div><!-- /.col-lg-4 -->
@@ -131,39 +144,6 @@
       )
       new WOW().init();
     </script><h1>Listing turns</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Date turn</th>
-      <th>Username</th>
-      <th>Avatar</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @turns.each do |turn| %>
-      <tr>
-        <td><%= turn.date_turn %></td>
-        <td><%= turn.user.username %></td>
-        <% if turn.user.user_avatar? %>
-          <td><%= image_tag turn.user.user_avatar_url(:thumb).to_s %></td>
-        <% else %>
-          <td><%= image_tag avatar_url(turn.user) %></td>
-        <% end %>
-        </td>
-        <td><%= link_to 'Show', turn %></td>
-        <td><%= link_to 'Edit', edit_turn_path(turn) %></td>
-        <td><%= link_to 'Destroy', turn, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Turn', new_turn_path %>
 
 <%= link_to 'Log Out', destroy_user_session_path, :method => :delete %>
 
