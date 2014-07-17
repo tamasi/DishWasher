@@ -56,13 +56,12 @@
             
             <% if @turns[2].user.user_avatar? %>
               <li><%= link_to image_tag(@turns[2].user.user_avatar_url(:thumb).to_s, class: 'img-rounded next-washer falling-next-1'), admins_path%><span> <p> <%= @turns[2].date_turn %> </p></span></li>
-              
             <% else %>
               <li><%= image_tag avatar_url(@turns[2].user), class: 'img-rounded nexwasher falling-next-1' %><span> <p> <%= @turns[2].date_turn %> </p></span></li>
             <% end %>
             
               <div class="u-are-next"><p>Are you Ready?</p></div>
-              <%= link_to image_tag(@turns[1].user.user_avatar_url(:thumb).to_s, class: 'img-rounded tomorrow-washer falling-tomorrow'), admins_path%> <span> <p> <%= @turns[1].date_turn %> </p></span>
+              <li><%= link_to image_tag(@turns[1].user.user_avatar_url(:thumb).to_s, class: 'img-rounded tomorrow-washer falling-tomorrow'), admins_path%> <span> <p> <%= @turns[1].date_turn %> </p></span>
             </li>
             <li>
               <%= link_to image_tag(@turns[0].user.user_avatar_url(:thumb).to_s, class: 'img-rounded today-washer falling-today'), admins_path %>
@@ -146,19 +145,3 @@
     </script><h1>Listing turns</h1>
 
 <%= link_to 'Log Out', destroy_user_session_path, :method => :delete %>
-
-
-<ul class="washer-list">
-            <li></li>
-            <li><%= link_to image_tag('1.jpg', class: 'img-rounded next-washer falling-next-3'), admins_path%></li>
-            <li><%= link_to image_tag('2.jpg', class: 'img-rounded next-washer falling-next-2'), admins_path%></li>
-            <li><%= link_to image_tag('10.jpg', class: 'img-rounded next-washer falling-next-1'), admins_path%></li>
-            <li>
-              <div class="u-are-next"><p>Are you Ready?</p></div>
-              <%= link_to image_tag('6.jpg', class: 'img-rounded tomorrow-washer falling-tomorrow'), admins_path%>
-            </li>
-            <li>
-              <%= link_to image_tag(@turns[0].user.user_avatar_url(:thumb).to_s, class: 'img-rounded today-washer falling-today'), admins_path %>
-              <h3 class="username"><%= @turns[0].user.username %></h3>
-            </li>
-          </ul>
