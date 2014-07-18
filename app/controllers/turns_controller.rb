@@ -5,8 +5,7 @@ class TurnsController < ApplicationController
   # GET /turns
   # GET /turns.json
   def index
-    @turns = apply_scopes(Turn)
-    #@turns = Turn.all
+    @turns = Turn.from_date.limit(7)
   end
 
   # GET /turns/1

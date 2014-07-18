@@ -43,7 +43,7 @@
                 <%= link_to image_tag(@turns[4].user.user_avatar_url(:thumb).to_s, class: 'img-rounded nexwasher falling-next-3'), admins_path%><span> <p> <%= @turns[4].date_turn %> </p></span>
               </li>
             <% else %>
-              <li><%= link_to image_tag(avatar_url(@turns[4].user), class: 'img-rounded nexwasher falling-next-3'), admins_path %><span> <p> <%= @turns[4].date_turn %> </p></span></li>
+              <li><%= link_to image_tag(avatar_url(@turns[4].user), class: 'img-rounded next-washer falling-next-3'), admins_path %><span> <p> <%= @turns[4].date_turn %> </p></span></li>
             <% end %>
             
             <% if @turns[3].user.user_avatar? %>
@@ -51,20 +51,29 @@
                 <%= link_to image_tag(@turns[3].user.user_avatar_url(:thumb).to_s, class: 'img-rounded next-washer falling-next-2'), admins_path%><span> <p> <%= @turns[3].date_turn %> </p></span>
               </li>
             <% else %>
-              <li><%= link_to image_tag(avatar_url(@turns[3].user), class: 'img-rounded nexwasher falling-next-2'), admins_path %><span> <p> <%= @turns[3].date_turn %> </p></span></li>
+              <li><%= link_to image_tag(avatar_url(@turns[3].user), class: 'img-rounded next-washer falling-next-2'), admins_path %><span> <p> <%= @turns[3].date_turn %> </p></span></li>
             <% end %>
             
             <% if @turns[2].user.user_avatar? %>
               <li><%= link_to image_tag(@turns[2].user.user_avatar_url(:thumb).to_s, class: 'img-rounded next-washer falling-next-1'), admins_path%><span> <p> <%= @turns[2].date_turn %> </p></span></li>
             <% else %>
-              <li><%= image_tag avatar_url(@turns[2].user), class: 'img-rounded nexwasher falling-next-1' %><span> <p> <%= @turns[2].date_turn %> </p></span></li>
+              <li><%= image_tag avatar_url(@turns[2].user), class: 'img-rounded next-washer falling-next-1' %><span> <p> <%= @turns[2].date_turn %> </p></span></li>
             <% end %>
-            
+
+              
               <div class="u-are-next"><p>Are you Ready?</p></div>
-              <li><%= link_to image_tag(@turns[1].user.user_avatar_url(:thumb).to_s, class: 'img-rounded tomorrow-washer falling-tomorrow'), admins_path%> <span> <p> <%= @turns[1].date_turn %> </p></span>
-            </li>
+              <% if @turns[1].user.user_avatar? %>
+                <li><%= link_to image_tag(@turns[1].user.user_avatar_url(:thumb).to_s, class: 'img-rounded tomorrow-washer falling-tomorrow'), admins_path%> <span> <p> <%= @turns[1].date_turn %> </p></span>
+                </li>
+              <% else %>
+                <li><%= image_tag avatar_url(@turns[1].user), class: 'img-rounded nexwasher falling-next-1' %><span> <p> <%= @turns[1].date_turn %> </p></span></li>
+              <% end %>
             <li>
+            <% if @turns[0].user.user_avatar? %>
               <%= link_to image_tag(@turns[0].user.user_avatar_url(:thumb).to_s, class: 'img-rounded today-washer falling-today'), admins_path %>
+            <% else %>
+              <%= image_tag avatar_url(@turns[0].user), class: 'img-rounded today-washer falling-today' %>
+            <% end %>
               <h3 class="username"><%= @turns[0].user.username %></h3>
               <span> <p> <%= @turns[0].date_turn %> </p></span>
             </li>
@@ -81,8 +90,8 @@
 
         <div id="delay-calendar" class="col-sm-3 animated bounceInDown">
           <div class="date">
-            <p class="month">May</p>
-            <p class="day">30</p>
+            <p class="month"><%= Time.now.strftime("%b") %></p>
+            <p class="day"><%= Time.now.strftime("%d") %></p>
           </div>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
@@ -109,7 +118,7 @@
             <tr class="active text-center week-days">
               <td>Mon</td>
               <td>Tue</td>
-              <td class="wash_today">Wed</td>
+              <td class="wash_today"><%= Time.now.strftime("%a") %></td>
               <td>Thu</td>
               <td>Fri</td>
             </tr>
