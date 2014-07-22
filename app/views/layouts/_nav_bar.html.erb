@@ -1,0 +1,45 @@
+<div class="navbar-wrapper">
+
+      <div class="container">
+        <div class="navbar navbar-static-top" role="navigation">
+          <div class="container">
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav animated fadeInDown secondary">
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle btn btn-default menu" data-toggle="dropdown"><i class="glyphicon glyphicon-th-list"></i> Navegation <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="my-turn.html"><i class="glyphicon glyphicon-calendar"></i> Full Calendar</a></li>
+                    <li><a href="my-turn.html"><i class="glyphicon glyphicon-question-sign"></i> When I Wash</a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header">Configuration</li>
+                    <li><a href="#"><i class="glyphicon glyphicon-cog"></i> Settings</a></li>
+                    <li>
+                      <%= link_to admins_path do%>
+                        <i class="glyphicon glyphicon-tree-deciduous"></i> Team
+                      <% end %>
+                    </li>
+                    <li>
+                      <%= link_to edit_user_registration_path do %>
+                        <i class="glyphicon glyphicon-user"></i> Edit Profile
+                      <% end %>
+                    </li>
+                    <li>
+                      <%= link_to destroy_user_session_path, :method => :delete do %>
+                        <i class="glyphicon glyphicon-log-out"></i> Log out
+                      <% end %>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <header>
+        <div class="logo-middle animated lightSpeedIn">
+          <%= link_to image_tag('logo.png'), root_path %>
+          <div class="line"></div>
+        </div>
+      </header>
+</div>

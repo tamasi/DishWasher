@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :turns do
     collection do
-      get :random_turn
+      get :generate_turns
     end
   end
 
@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   
   devise_for :users
 
+  root 'turns#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

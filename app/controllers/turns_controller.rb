@@ -5,7 +5,8 @@ class TurnsController < ApplicationController
   # GET /turns
   # GET /turns.json
   def index
-    @turns = Turn.from_date.limit(7)
+    #@turns = Turn.from_date.limit(7)
+    @turns = Turn.for_organization(current_user.organization)
   end
 
   # GET /turns/1
@@ -63,25 +64,11 @@ class TurnsController < ApplicationController
   end
 
   #get /random_turn
-  def random_turn
-      @team = User.from_organization(current_user.organization)
-      day = Time.now.to_date
-      f = Time.new.end_of_year.to_date
-      while day < f
-        @team.shuffle
-        @team.each do |soldier|
-          @turn = Turn.new
-          @turn.user_id = soldier.id
-          if day.friday?
-            @turn.date_turn = day
-            day += 3
-          else
-            @turn.date_turn = day
-            day += 1 
-          end
-          @turn.save
-        end
-      end
+  def generate_turns
+      team       = User.from_organization(current_user.organization)
+      start_date = Time.now.to_date
+
+      ::GenerateTurns.new(team, start_date).perform
       redirect_to turns_path
   end
 

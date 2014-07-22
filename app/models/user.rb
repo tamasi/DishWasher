@@ -17,8 +17,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   #validate username and email
-  validates :username, :presence => true, :uniqueness => true
-  validates :email, presence: true, :uniqueness => true
+  validates :username, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true
   	
 
   mount_uploader :user_avatar, UserAvatarUploader
