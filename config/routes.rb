@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :turns do
     collection do
       get :generate_turns
+      get :regenerate_turns
     end
   end
 

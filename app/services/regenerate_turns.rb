@@ -1,7 +1,7 @@
 class RegenerateTurns
   attr_reader :team, :start_date
 
-  def initialize
+  def initialize(team, start_date)
     @team = team
     @start_date = start_date
   end
