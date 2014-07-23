@@ -20,7 +20,7 @@ class AdminsController < ApplicationController
     	@team.save
     	respond_to do |format|
     	  if @team.save
-    	    format.html { redirect_to admins_path, notice: 'New soldier to wash was successfully created.' }
+    	    format.html { redirect_to admins_path, notice: 'New member was successfully created.' }
     	  else
     	    format.html { render action: 'new' }
     	  end

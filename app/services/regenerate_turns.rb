@@ -7,7 +7,7 @@ class RegenerateTurns
   end
 
   def perform
-    ::DestroyTurns.new(team, start_date).perform
-    ::GenerateTurns.new(team, start_date).perform
+    DestroyTurns.new(team, start_date).perform
+    GenerateTurns.new(team, start_date).perform
   end
 end

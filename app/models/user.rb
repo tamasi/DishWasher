@@ -19,7 +19,10 @@ class User < ActiveRecord::Base
   #validate username and email
   validates :username, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
-  	
+
+  accepts_nested_attributes_for :organization
+
+
 
   mount_uploader :user_avatar, UserAvatarUploader
 end

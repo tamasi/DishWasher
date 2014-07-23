@@ -1,5 +1,6 @@
 class TurnsController < ApplicationController
   before_action :set_turn, only: [:show, :edit, :update, :destroy]
+  before_action :check_organization, only: [:index]
   has_scope :from_date
   has_scope :to_date
   # GET /turns
@@ -89,5 +90,15 @@ class TurnsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def turn_params
       params.require(:turn).permit(:date_turn, :user_id, :miss)
+    end
+
+    def check_organization
+      if current_user.organization_id == nil and current_user.is_admin == true
+        redirect_to new_organization_path
+      end
+    end
+
+    def check_team
+      
     end
 end

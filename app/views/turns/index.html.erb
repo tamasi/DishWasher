@@ -1,4 +1,8 @@
-    <%= render 'layouts/nav_bar.html.erb' %>
+    <% if @current_user.is_admin == true %>
+      <%= render 'layouts/nav_bar_admin.html.erb' %>
+    <% else %>
+      <%= render 'layouts/nav_bar.html.erb' %>
+    <% end %>
     <div class="container">
 
       <!-- Three columns of text below the carousel -->

@@ -27,3 +27,7 @@
 <div>
   <%= link_to 'Turns in this org', turns_path( "2014-07-17", "2014-07-27" ) %>
 </div>
+
+<div>
+  <%= link_to 'log Out', destroy_user_session_path, :method => :delete %>
+</div>
