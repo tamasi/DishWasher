@@ -39,10 +39,15 @@ class AdminsController < ApplicationController
 	    end
   	end
 
-  	
+  def destroy
+    @member.destroy
+    respond_to do |format|
+      format.html { redirect_to admins_path, notice: 'Member was successfully deleted.' }
+    end
+  end
 
   	private
-  	def user_params
-  		params.require(:user).permit(:username, :email, :password, :password_confirmation)
-  	end
+    	def user_params
+    		params.require(:user).permit(:username, :email, :password, :password_confirmation)
+    	end
 end

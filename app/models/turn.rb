@@ -12,7 +12,7 @@ class Turn < ActiveRecord::Base
   end
 
   def self.from_date
-    date = date_turn_in_the_past(Time.now.to_date-2)
+    date = date_turn_in_the_past(Time.now.to_date)
     where('date_turn >= ?', date).limit(7)
   end
 

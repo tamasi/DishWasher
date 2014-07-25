@@ -9,10 +9,17 @@ Rails.application.routes.draw do
 
   resources :organizations
 
-  resources :admins
+  namespace :admin do
+    resources :users
+  end
     
   
-  devise_for :users
+  devise_for :users,
+    controllers: {
+      registrations: 'users/registrations',
+      confirmations: 'users/confirmations',
+      sessions: 'users/sessions'
+    }
 
   root 'turns#index'
   # The priority is based upon order of creation: first created -> highest priority.

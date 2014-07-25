@@ -12,22 +12,22 @@
             <li></li>
             <% if @turns[6].user.user_avatar? %>
               <li>
-                <%= link_to image_tag(@turns[6].user.user_avatar_url(:thumb).to_s, class: 'img-rounded next-washer falling-next-3'), admins_path%><span> <p> <%= @turns[6].date_turn %> </p></span>
+                <%= link_to image_tag(@turns[6].user.user_avatar_url(:thumb).to_s, class: 'img-rounded next-washer falling-next-3'), admin_users_path%><span> <p> <%= @turns[6].date_turn %> </p></span>
               </li>
             <% else %>
-              <li><%= link_to image_tag(avatar_url(@turns[6].user), class: 'img-rounded next-washer falling-next-3'), admins_path %><span> <p> <%= @turns[6].date_turn %> </p></span></li>
+              <li><%= link_to image_tag(avatar_url(@turns[6].user), class: 'img-rounded next-washer falling-next-3'), admin_users_path %><span> <p> <%= @turns[6].date_turn %> </p></span></li>
             <% end %>
             
             <% if @turns[5].user.user_avatar? %>
               <li>
-                <%= link_to image_tag(@turns[5].user.user_avatar_url(:thumb).to_s, class: 'img-rounded next-washer falling-next-2'), admins_path%><span> <p> <%= @turns[5].date_turn %> </p></span>
+                <%= link_to image_tag(@turns[5].user.user_avatar_url(:thumb).to_s, class: 'img-rounded next-washer falling-next-2'), admin_users_path%><span> <p> <%= @turns[5].date_turn %> </p></span>
               </li>
             <% else %>
-              <li><%= link_to image_tag(avatar_url(@turns[5].user), class: 'img-rounded next-washer falling-next-2'), admins_path %><span> <p> <%= @turns[5].date_turn %> </p></span></li>
+              <li><%= link_to image_tag(avatar_url(@turns[5].user), class: 'img-rounded next-washer falling-next-2'), admin_users_path %><span> <p> <%= @turns[5].date_turn %> </p></span></li>
             <% end %>
             
             <% if @turns[4].user.user_avatar? %>
-              <li><%= link_to image_tag(@turns[4].user.user_avatar_url(:thumb).to_s, class: 'img-rounded next-washer falling-next-1'), admins_path%><span> <p> <%= @turns[4].date_turn %> </p></span></li>
+              <li><%= link_to image_tag(@turns[4].user.user_avatar_url(:thumb).to_s, class: 'img-rounded next-washer falling-next-1'), admin_users_path%><span> <p> <%= @turns[4].date_turn %> </p></span></li>
             <% else %>
               <li><%= image_tag avatar_url(@turns[4].user), class: 'img-rounded next-washer falling-next-1' %><span> <p> <%= @turns[4].date_turn %> </p></span></li>
             <% end %>
@@ -35,14 +35,14 @@
               
               <div class="u-are-next"><p>Are you Ready?</p></div>
               <% if @turns[3].user.user_avatar? %>
-                <li><%= link_to image_tag(@turns[3].user.user_avatar_url(:thumb).to_s, class: 'img-rounded tomorrow-washer falling-tomorrow'), admins_path%> <span> <p> <%= @turns[3].date_turn %> </p></span>
+                <li><%= link_to image_tag(@turns[3].user.user_avatar_url(:thumb).to_s, class: 'img-rounded tomorrow-washer falling-tomorrow'), admin_users_path%> <span> <p> <%= @turns[3].date_turn %> </p></span>
                 </li>
               <% else %>
                 <li><%= image_tag avatar_url(@turns[3].user), class: 'img-rounded nexwasher falling-next-1' %><span> <p> <%= @turns[3].date_turn %> </p></span></li>
               <% end %>
             <li>
             <% if @turns[2].user.user_avatar? %>
-              <%= link_to image_tag(@turns[2].user.user_avatar_url(:thumb).to_s, class: 'img-rounded today-washer falling-today'), admins_path %>
+              <%= link_to image_tag(@turns[2].user.user_avatar_url(:thumb).to_s, class: 'img-rounded today-washer falling-today'), admin_users_path %>
             <% else %>
               <%= image_tag avatar_url(@turns[2].user), class: 'img-rounded today-washer falling-today' %>
             <% end %>
@@ -97,35 +97,35 @@
             <tr class="active">
               <td>
                 <% if @turns[0].user.user_avatar? %>
-                  <%= link_to image_tag(@turns[0].user.user_avatar_url(:thumb).to_s, class: 'whasher-list'), admins_path %>
+                  <%= link_to image_tag(@turns[0].user.user_avatar_url(:thumb).to_s, class: 'whasher-list'), admin_users_path %>
                 <% else %>
                   <%= image_tag avatar_url(@turns[0].user), class: 'whasher-list' %>
                 <% end %>
               </td>
               <td>
                 <% if @turns[1].user.user_avatar? %>
-                  <%= link_to image_tag(@turns[1].user.user_avatar_url(:thumb).to_s, class: 'whasher-list'), admins_path %>
+                  <%= link_to image_tag(@turns[1].user.user_avatar_url(:thumb).to_s, class: 'whasher-list'), admin_users_path %>
                 <% else %>
                   <%= image_tag avatar_url(@turns[1].user), class: 'whasher-list' %>
                 <% end %>
               </td>
               <td class="wash_today">
                 <% if @turns[2].user.user_avatar? %>
-                  <%= link_to image_tag(@turns[2].user.user_avatar_url(:thumb).to_s, class: 'whasher-list'), admins_path %>
+                  <%= link_to image_tag(@turns[2].user.user_avatar_url(:thumb).to_s, class: 'whasher-list'), admin_users_path %>
                 <% else %>
                   <%= image_tag avatar_url(@turns[2].user), class: 'whasher-list' %>
                 <% end %>
               </td>
               <td>
                 <% if @turns[3].user.user_avatar? %>
-                  <%= link_to image_tag(@turns[3].user.user_avatar_url(:thumb).to_s, class: 'whasher-list'), admins_path %>
+                  <%= link_to image_tag(@turns[3].user.user_avatar_url(:thumb).to_s, class: 'whasher-list'), admin_users_path %>
                 <% else %>
                   <%= image_tag avatar_url(@turns[3].user), class: 'whasher-list' %>
                 <% end %>
               </td>
               <td>
                 <% if @turns[4].user.user_avatar? %>
-                  <%= link_to image_tag(@turns[4].user.user_avatar_url(:thumb).to_s, class: 'whasher-list'), admins_path %>
+                  <%= link_to image_tag(@turns[4].user.user_avatar_url(:thumb).to_s, class: 'whasher-list'), admin_users_path %>
                 <% else %>
                   <%= image_tag avatar_url(@turns[4].user), class: 'whasher-list' %>
                 <% end %>

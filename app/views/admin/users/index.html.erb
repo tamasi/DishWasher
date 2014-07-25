@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <td>Name</td>
+          <td>e-mail</td>
+          <td>Avatar</td>
+        </thead>
+        <tbody>
+          <% @team.each do |member| %>
+            <tr>
+              <td>
+                <%= member.username %>
+              </td>
+              <td>
+                <%= member.email %>
+              </td>
+              <% if member.user_avatar? %>
+                <td><%= image_tag member.user_avatar_url(:thumb).to_s %></td>
+              <% else %>
+                <td><%= image_tag avatar_url(member) %></td> <%# this line call the helper to obtain the gravatar for user -- rebuild properly%>
+              <% end %>
+              <td>
+                <%= link_to 'Delete Member', admin_user_path(member), method: :delete, data: { confirm: 'Are you sure?' } %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    <%= link_to 'Back Home', root_path, class:"btn btn-default" %>
+    <%= link_to 'New Member', new_admin_user_path, class:"btn btn-success" %>
+  </div>
+</div>
+
+
+<h1>Washer soldiers</h1>
+
+
+
+<div>
+  <%= link_to 'Generate Turns', generate_turns_turns_path %>
+  <%= link_to 'Regenerate Turns', regenerate_turns_turns_path %>
+</div>
+

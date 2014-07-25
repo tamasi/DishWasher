@@ -14,7 +14,7 @@
         <td><%= link_to 'Show', organization %></td>
         <td><%= link_to 'Edit', edit_organization_path(organization) %></td>
         <td><%= link_to 'Destroy', organization, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= image_tag avatar_url(organization.users.first) %></td> <%# this line call the helper to obtain the gravatar for user -- rebuild properly%>
+        
       </tr>
     <% end %>
   </tbody>
