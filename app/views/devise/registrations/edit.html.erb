@@ -35,7 +35,11 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav side-nav">
-            <li class="active"><a href="index.html"><i class="fa fa-edit"></i> Edit Profile</a></li>
+            <li class="active">
+              <%= link_to edit_user_registration_path do %>
+                <i class="fa fa-edit"></i> Edit Profile
+              <% end %>
+            </li>
             <li><a href="settings.html"><i class="fa fa-cog"></i> Settings</a></li>
           </ul>
 
@@ -58,130 +62,68 @@
 
             <div class="col-lg-6">
               <div class="container-user">
-                <img src="../img/3.jpg">
+                <% if current_user.user_avatar? %>
+                  <%= image_tag current_user.user_avatar_url(:thumb).to_s %>
+                <% else %>
+                  <%= image_tag avatar_url(current_user) %>
+                <% end %>
               </div>
-              <form role="form">
-                <div class="form-group">
-                  <label>File input</label>
-                  <input type="file">
-                </div>
-              </form>
+
+              <!-- Desde AQUI formulario -->
+              <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, multipart: true }) do |f| %>
+              <%= devise_error_messages! %>
+              <div class="form-group">
+                <label>File input</label>
+                <%= f.file_field :user_avatar, class: 'form-control', placeholder: 'avatar' %>
+              </div>
             </div>
 
             <div class="col-lg-6">
-              <form role="form">
-
-                <div class="form-group input-group">
-                  <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                  <input type="text" class="form-control" value="Franco Alvarez">
-                </div>
-
-                <div class="form-group input-group">
-                  <span class="input-group-addon"><i class="fa fa-thumbs-o-up"></i></span>
-                  <input type="text" class="form-control" value="Rubio">
-                </div>
-                
-                <div class="form-group input-group">
-                  <span class="input-group-addon">@</span>
-                  <input type="text" class="form-control" value="franco@hashdog.com">
-                </div>
-
-                <div class="form-group input-group">
-                  <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                  <input type="password" class="form-control" value="123456">
-                </div>
-
-                <div class="form-group">
-                  <label>Text area</label>
-                  <textarea class="form-control" rows="3"></textarea>
-                </div>
-
-                <button type="submit" class="btn btn-success btn-lg">Save</button>
-                <a href="../index.html" class="btn btn-primary btn-lg">Back</a>  
-
-              </form>
-            </div>
-
-            <div class="clear"></div>
-            <h1>Mercy</h1>
-            <div class="breadcrumb">
-              <p>This is for change turns.</p>
-            </div>
-
-            <div class="col-sm-4">
-              <div class="panel panel-info">
-                <div class="panel-heading">
-                  <div class="row">
-                    <div class="col-xs-12 text-center">
-                      <h4>Rotate</h4>
-                      <p>You can rotate your turn with the next <b>Washer</b>.</p>
-                    </div>
-                  </div>
-                </div>
-                <a href="#">
-                  <div class="panel-footer announcement-bottom">
-                    <div class="row">
-                      <div class="col-xs-12 text-center">
-                        <a href="request.html" class="btn btn-default">Ask for</a>
-                      </div>
-                    </div>
-                  </div>
-                </a>
+              <div class="form-group input-group">
+                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                <!--<input type="text" class="form-control" value="Franco Alvarez">-->
+                <%= f.text_field :username , autofocus: true, class: 'form-control', placeholder: 'user' %>
               </div>
-            </div>
 
-            <div class="col-sm-4">
-              <div class="panel panel-info">
-                <div class="panel-heading">
-                  <div class="row">
-                    <div class="col-xs-12 text-center">
-                      <h4>Mercy</h4>
-                      <p>Didn´t assist to work? Ask Hulk Mercy.</p>
-                    </div>
-                  </div>
-                </div>
-                <a href="#">
-                  <div class="panel-footer announcement-bottom">
-                    <div class="row">
-                      <div class="col-xs-12 text-center">
-                        <a href="request.html" class="btn btn-default">Please</a>
-                      </div>
-                    </div>
-                  </div>
-                </a>
+              <div class="form-group input-group">
+                <span class="input-group-addon">@</span>
+                <%= f.text_field :email, class: 'form-control', placeholder: 'e-mail' %>
               </div>
-            </div>
 
-            <div class="col-sm-4">
-              <div class="panel panel-info">
-                <div class="panel-heading">
-                  <div class="row">
-                    <div class="col-xs-12 text-center">
-                      <h4>Holidays</h4>
-                      <p>Sorry Hulk, I´ll be in Holidays!.</p>
-                    </div>
-                  </div>
-                </div>
-                <a href="#">
-                  <div class="panel-footer announcement-bottom">
-                    <div class="row">
-                      <div class="col-xs-12 text-center">
-                        <a href="request.html" class="btn btn-default">Sorry</a>
-                      </div>
-                    </div>
-                  </div>
-                </a>
+              <div class="form-group input-group">
+                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'Password' %>
               </div>
+              <p class="help-block">(leave blank if you don't want to change it)</p>
+
+              <div class="form-group input-group">
+                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control', placeholder: 'Password Confirmation' %>
+              </div>
+
+              <div class="form-group input-group">
+                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                <%= f.password_field :current_password, autocomplete: "off", class: 'form-control', placeholder: 'Current Password' %>
+              </div>
+              <p class="help-block">(we need your current password to confirm your changes)</p>
+
+              <%= f.submit "Update", class: 'btn btn-success btn-lg' %>
+              <%= link_to "Back Home", root_path, class: "btn btn-primary btn-lg" %>
+              <% end %>
+              <div>
+              <h3>Unhappy?</h3>
+                <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-warning btn-lg"%>
+            </div>
+            <!-- Hasta AQUI formulario -->
+            </div>
+            </div>
+            <div class="col-sm-6 no-padding-right">
+              <%= image_tag("platos.png", class:"platos") %>
+              <%= image_tag("bar.png", class:"bar") %>
+              <div class="bar"></div>
+              <p class="faqs">FAQs, Recomendation? <a href="mailto:team@hashdog.com">Please let us know</a>.</p>
             </div>
 
-          </div>
-          <div class="col-sm-6 no-padding-right">
-            <img src="../img/platos.png" class="platos">
-            <img src="../img/bar.png" class=" bar">
-            <div class="bar"></div>
-            <p>FAQs, Recomendation? <a href="mailto:team@hashdog.com">Please let us know</a>.</p>
-
-          </div>
         </div><!-- /.row -->
 
       </div><!-- /#page-wrapper -->
@@ -194,78 +136,3 @@
 
   </body>
 </html>
-
-
-
-
-
-
-<div class="container">
-
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <div class="col-sm-4 col-sm-offset-4 login-box text-center">
-          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, multipart: true }) do |f| %>
-          <%= devise_error_messages! %>
-            <h3 class="into-title">Edit <%= resource_name.to_s.humanize %></h3>
-
-              <div class="col-sm-12 form-group input-group login-padding">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <%= f.text_field :username , autofocus: true, class: 'form-control', placeholder: 'User' %>
-              </div>
-
-              <div class="col-sm-12 form-group input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                <%= f.text_field :email, class: 'form-control', placeholder: 'e-mail' %>
-              </div>
-              
-              <div class="col-sm-12 form-group input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
-                <%= f.file_field :user_avatar, class: 'form-control', placeholder: 'avatar' %>
-              </div>
-
-              <div>
-                <div class="col-sm-12 form-group input-group">
-                  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                  <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'Password' %>
-                </div>
-                <p class="help-block">(leave blank if you don't want to change it)</p>
-              </div>
-
-              <div class="col-sm-12 form-group input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control', placeholder: 'Password Confirmation' %>
-              </div>
-
-              <div class="col-sm-12 form-group input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                <%= f.password_field :current_password, autocomplete: "off", class: 'form-control', placeholder: 'Current Password' %>
-              </div>
-              <p class="help-block">(we need your current password to confirm your changes)</p>
-
-              <div class="login-botons">
-                <%= link_to "Back Home", root_path, class: "btn btn-default btn-lg" %>
-                <!-- <a href="index.html" class="btn btn-default btn-lg">Back Home</a> -->
-                <%= f.submit "Update", class: 'btn btn-success btn-lg' %><br/>
-                <%#button type="submit" class="btn btn-success btn-lg">Log In</button> %>
-              </div>
-            <% end %>
-            <div>
-              <h3>Unhappy?</h3>
-                <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-warning btn-lg"%>
-            </div>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
-    </div><!-- /.container -->
-
-    <!-- Placed at the end of the document so the pages load faster -->
-    <!--link href="css/style.css" rel="stylesheet" -->
-    
-    <script>
-      wow = new WOW(
-        {
-          offset:       200          // default
-        }
-      )
-      new WOW().init();
-    </script>
