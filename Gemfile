@@ -52,6 +52,9 @@ gem 'rmagick'
 gem 'has_scope'
 
 gem 'simple_form'
+
+gem "font-awesome-rails"
+
 group :development do
 	gem 'better_errors'
 end

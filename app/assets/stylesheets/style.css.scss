@@ -289,6 +289,21 @@ tbody {
   margin:0;
   padding: 0;
 }
+
+.table-hulk{
+  position: fixed;
+  width: 20%;
+  height: 50%;
+  background: url(bar-hulk.png) no-repeat bottom right;
+  background-size: 100% 100%;
+  z-index: -1;
+  top: 50%;
+  right: 0;
+  bottom: 2px;
+  overflow: hidden;
+  margin:0;
+  padding: 0;
+}
 /**************************************************************************************************************************
 ***************************************************************************************************************************
                               FOOTER

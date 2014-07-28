@@ -1,3 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Dashboard - Dishwasher App</title>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+
+    <div id="wrapper">
+
+      <!-- Sidebar -->
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <%= link_to root_path, class:"navbar-brand" do %>
+            <i class="fa fa-arrow-circle-left"></i> Back home
+          <% end %>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav side-nav">
+            <li class="active"><a href="index.html"><i class="fa fa-edit"></i> Edit Profile</a></li>
+            <li><a href="settings.html"><i class="fa fa-cog"></i> Settings</a></li>
+          </ul>
+
+        </div><!-- /.navbar-collapse -->
+      </nav>
+
+      <div id="page-wrapper">
+
+        <div class="row">
+          <div class="col-lg-12">
+            <h1>My Profile</h1>
+            <div class="breadcrumb">
+              <p>If you want to ask hulk a break enter <a href="request.html">here</a>.</p>
+            </div>
+          </div>
+        </div><!-- /.row -->
+
+        <div class="row">
+          <div class="col-sm-6 zposition">
+
+            <div class="col-lg-6">
+              <div class="container-user">
+                <img src="../img/3.jpg">
+              </div>
+              <form role="form">
+                <div class="form-group">
+                  <label>File input</label>
+                  <input type="file">
+                </div>
+              </form>
+            </div>
+
+            <div class="col-lg-6">
+              <form role="form">
+
+                <div class="form-group input-group">
+                  <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                  <input type="text" class="form-control" value="Franco Alvarez">
+                </div>
+
+                <div class="form-group input-group">
+                  <span class="input-group-addon"><i class="fa fa-thumbs-o-up"></i></span>
+                  <input type="text" class="form-control" value="Rubio">
+                </div>
+                
+                <div class="form-group input-group">
+                  <span class="input-group-addon">@</span>
+                  <input type="text" class="form-control" value="franco@hashdog.com">
+                </div>
+
+                <div class="form-group input-group">
+                  <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                  <input type="password" class="form-control" value="123456">
+                </div>
+
+                <div class="form-group">
+                  <label>Text area</label>
+                  <textarea class="form-control" rows="3"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-success btn-lg">Save</button>
+                <a href="../index.html" class="btn btn-primary btn-lg">Back</a>  
+
+              </form>
+            </div>
+
+            <div class="clear"></div>
+            <h1>Mercy</h1>
+            <div class="breadcrumb">
+              <p>This is for change turns.</p>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="panel panel-info">
+                <div class="panel-heading">
+                  <div class="row">
+                    <div class="col-xs-12 text-center">
+                      <h4>Rotate</h4>
+                      <p>You can rotate your turn with the next <b>Washer</b>.</p>
+                    </div>
+                  </div>
+                </div>
+                <a href="#">
+                  <div class="panel-footer announcement-bottom">
+                    <div class="row">
+                      <div class="col-xs-12 text-center">
+                        <a href="request.html" class="btn btn-default">Ask for</a>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="panel panel-info">
+                <div class="panel-heading">
+                  <div class="row">
+                    <div class="col-xs-12 text-center">
+                      <h4>Mercy</h4>
+                      <p>Didn´t assist to work? Ask Hulk Mercy.</p>
+                    </div>
+                  </div>
+                </div>
+                <a href="#">
+                  <div class="panel-footer announcement-bottom">
+                    <div class="row">
+                      <div class="col-xs-12 text-center">
+                        <a href="request.html" class="btn btn-default">Please</a>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="panel panel-info">
+                <div class="panel-heading">
+                  <div class="row">
+                    <div class="col-xs-12 text-center">
+                      <h4>Holidays</h4>
+                      <p>Sorry Hulk, I´ll be in Holidays!.</p>
+                    </div>
+                  </div>
+                </div>
+                <a href="#">
+                  <div class="panel-footer announcement-bottom">
+                    <div class="row">
+                      <div class="col-xs-12 text-center">
+                        <a href="request.html" class="btn btn-default">Sorry</a>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-sm-6 no-padding-right">
+            <img src="../img/platos.png" class="platos">
+            <img src="../img/bar.png" class=" bar">
+            <div class="bar"></div>
+            <p>FAQs, Recomendation? <a href="mailto:team@hashdog.com">Please let us know</a>.</p>
+
+          </div>
+        </div><!-- /.row -->
+
+      </div><!-- /#page-wrapper -->
+
+    </div><!-- /#wrapper -->
+
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+  </body>
+</html>
+
+
+
+
+
+
 <div class="container">
 
       <!-- Three columns of text below the carousel -->
@@ -55,12 +257,6 @@
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
     </div><!-- /.container -->
-
-    <div class="container-fluid">
-      <!-- /END THE FEATURETTES -->     
-      <div class="edit-hulk"></div>
-      <!-- FOOTER -->
-    </div>
 
     <!-- Placed at the end of the document so the pages load faster -->
     <!--link href="css/style.css" rel="stylesheet" -->

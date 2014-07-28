@@ -1,3 +1,11 @@
+<%= render 'layouts/nav_bar_admin.html.erb' %>
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+      <h1>
+        This is the team for <%= current_user.organization.name.upcase %>
+      </h1>
+  </div>
+</div>
 <div class="row">
   <div class="col-sm-6 col-sm-offset-3">
     <div class="table-responsive">
@@ -22,7 +30,9 @@
                 <td><%= image_tag avatar_url(member) %></td> <%# this line call the helper to obtain the gravatar for user -- rebuild properly%>
               <% end %>
               <td>
-                <%= link_to 'Delete Member', admin_user_path(member), method: :delete, data: { confirm: 'Are you sure?' } %>
+                <%= link_to admin_user_path(member), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-warning btn-xs" do %>
+                  <i class="glyphicon glyphicon-remove-circle"></i> Delete
+                <% end %>
               </td>
             </tr>
           <% end %>
@@ -38,13 +48,20 @@
   </div>
 </div>
 
-
-<h1>Washer soldiers</h1>
-
-
-
-<div>
-  <%= link_to 'Generate Turns', generate_turns_turns_path %>
-  <%= link_to 'Regenerate Turns', regenerate_turns_turns_path %>
+<div class="container-fluid">
+  <!-- /END THE FEATURETTES -->     
+  <div class="table-hulk"></div>
+  <!-- FOOTER -->
 </div>
 
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!--link href="css/style.css" rel="stylesheet" -->
+    
+    <script>
+      wow = new WOW(
+        {
+          offset:       200          // default
+        }
+      )
+      new WOW().init();
+    </script>
