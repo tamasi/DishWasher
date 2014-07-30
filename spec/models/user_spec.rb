@@ -20,6 +20,23 @@ describe User do
         expect(result).not_to include(@another_user)
       end
     end
+
+    describe '.org' do
+      before do
+        @user = FactoryGirl.create(:user)
+        @another_user = FactoryGirl.create(:user)
+      end
+
+      it 'does return users from organization ii' do
+        result = User.org(@user)
+        expect(result).to include(@user)
+      end
+
+      it 'does not return this user in organization' do
+        result = User.org(@user)
+        expect(result).not_to include(@another_user)
+      end
+    end
   end
 
 end
