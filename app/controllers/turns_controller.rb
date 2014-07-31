@@ -1,4 +1,5 @@
 class TurnsController < ApplicationController
+  before_action :authenticate_admin!, except: [:index]
   before_action :set_turn, only: [:show, :edit, :update, :destroy]
   before_action :check_organization, only: [:index]
   has_scope :from_date
