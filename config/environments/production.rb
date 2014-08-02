@@ -82,17 +82,17 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   #email enabled in production
-  config.action_mailer.default_url_options = { :host => ENV["DOMAIN_NAME"]}
+  config.action_mailer.default_url_options = "dishwasher.herokuapp.com"
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.smtp_settings = {
     addres: 'smtp.sendgrid.net',
     port: 587,
     authentication: "plain",
     user_name: "app28028978@heroku.com",
     password: "1kexcva4",
-    domain: ENV["DOMAIN_NAME"],
+    domain: "dishwasher.herokuapp.com",
     enable_starttls_auto: true
   }
 end
