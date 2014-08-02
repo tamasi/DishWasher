@@ -29,13 +29,13 @@ DishWasher::Application.configure do
   config.assets.debug = true
   #Configuration for send email from app
   config.action_mailer.smtp_settings = {
-    address: "smtp.gmail.com",
+    address: "smtp.sendgrid.net",
     port: 587,
     domain: ENV["DOMAIN_NAME"],
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: ENV["GMAIL_USERNAME"],
-    password: ENV["GMAIL_PASSWORD"]
+    user_name: "app28028978@heroku.com",
+    password: "1kexcva4"
   }
   #ActionMailer config
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
