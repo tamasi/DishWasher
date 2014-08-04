@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140520223852) do
+ActiveRecord::Schema.define(version: 20140804185931) do
 
   create_table "organizations", force: true do |t|
     t.string   "name"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20140520223852) do
     t.date     "date_turn"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "user_id"
+    t.integer  "user_id",    limit: 255
     t.boolean  "miss"
   end
 
