@@ -1,6 +1,6 @@
 class ChangeTypeOfUserIdInTurn < ActiveRecord::Migration
   def up
-    change_column :turns, :user_id, 'integer USING CAST(column_to_change AS integer)'
+    change_column :turns, :user_id, 'integer USING CAST(user_id AS integer)'
   end
 
   def down
