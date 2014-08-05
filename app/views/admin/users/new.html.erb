@@ -1,7 +1,8 @@
 <h2>Add new user for the washerTeam</h2>
 
-<%= form_for @team, url: admin_users_path(@user), html: { method: :post } do |f|  %>
-<%= devise_error_messages! %>
+<%#= form_for @team, url: admin_users_path(@user), html: { method: :post } do |f|  %>
+<%= form_for(@team, url: admin_users_path(@user)) do |f| %>
+<%#= devise_error_messages! %>
 	<div>
 		<%= f.label :username %> <br>
 		<%= f.text_field :username %>
