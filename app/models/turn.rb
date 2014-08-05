@@ -1,7 +1,7 @@
 class Turn < ActiveRecord::Base
 	belongs_to :user
 
-  scope :for_organization, -> (organization) { joins(:user).where("organization_id = ?", organization.id).from_date }
+  scope :for_organization, -> (organization) { joins(:user).where('users.organization_id = ?', organization.id).from_date.order(date_turn: :asc) }
   scope :from_users, -> (user_ids) { where(user_id: user_ids)}
   scope :greater_turn_date_than, -> (date) { where('date_turn >= ?', date) }
 
@@ -18,7 +18,7 @@ class Turn < ActiveRecord::Base
   end
 
   def self.past_days(days_count = 2)
-    where('turns.date_turn < ?', Date.current).order('turns.date_turn DESC').limit(days_count)
+    where('turns.date_turn < ?', Date.current).order(date_turn: :desc).limit(days_count)
   end
 
 end

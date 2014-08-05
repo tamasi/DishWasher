@@ -54,17 +54,16 @@ gem 'simple_form'
 
 gem "font-awesome-rails"
 
+gem 'pg'
+
 group :development do
 	gem 'better_errors'
 end
 group :test, :development do
-  # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'ffaker'
 end
 group :production do
-  gem 'pg'
   gem 'unicorn'
 end
