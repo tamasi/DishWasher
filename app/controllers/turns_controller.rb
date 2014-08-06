@@ -8,7 +8,7 @@ class TurnsController < ApplicationController
   # GET /turns.json
   def index
     #@turns = Turn.from_date.limit(7)
-    @turns = Turn.for_organization(current_user.organization)
+    @turns = Turn.for_organization(current_user.organization).from_date
   end
 
   # GET /turns/1

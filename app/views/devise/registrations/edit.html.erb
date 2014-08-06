@@ -47,7 +47,7 @@
             <div class="col-lg-6">
               <div class="container-user">
                 <% if current_user.user_avatar? %>
-                  <%= image_tag current_user.user_avatar_url(:thumb).to_s %>
+                  <%= image_tag current_user.user_avatar_url(:large).to_s %>
                 <% else %>
                   <%= image_tag avatar_url(current_user) %>
                 <% end %>
@@ -104,7 +104,7 @@
               <%= image_tag("platos.png", class:"platos") %>
               <%= image_tag("bar.png", class:"bar") %>
               <div class="bar"></div>
-              <p class="faqs">FAQs, Recomendation? <a href="mailto:team@hashdog.com">Please let us know</a>.</p>
+              <p class="faqs">FAQs, Recomendation? <a href="www.hashdog.com">Please let us know</a>.</p>
             </div>
 
         </div><!-- /.row -->

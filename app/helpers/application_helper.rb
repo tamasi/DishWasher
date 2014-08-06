@@ -5,6 +5,7 @@ module ApplicationHelper
     	"http://gravatar.com/avatar/#{gravatar_id}.png"  
   end
 
+  #helper for add clases in home to pictures of washers
   def next_disher_style(index)
     case index
     when 3
