@@ -9,46 +9,24 @@
       <div class="row">
         <div class="col-sm-3">
           <ul class="washer-list">
-            <li></li>
-            <% if @turns[6].user.user_avatar? %>
-              <li>
-                <%= link_to image_tag(@turns[6].user.user_avatar_url(:thumb).to_s, class: 'img-rounded next-washer falling-next-3'), admin_users_path%><span> <p> <%= @turns[6].date_turn %> </p></span>
-              </li>
-            <% else %>
-              <li><%= link_to image_tag(avatar_url(@turns[6].user), class: 'img-rounded next-washer falling-next-3'), admin_users_path %><span> <p> <%= @turns[6].date_turn %> </p></span></li>
-            <% end %>
-            
-            <% if @turns[5].user.user_avatar? %>
-              <li>
-                <%= link_to image_tag(@turns[5].user.user_avatar_url(:thumb).to_s, class: 'img-rounded next-washer falling-next-2'), admin_users_path%><span> <p> <%= @turns[5].date_turn %> </p></span>
-              </li>
-            <% else %>
-              <li><%= link_to image_tag(avatar_url(@turns[5].user), class: 'img-rounded next-washer falling-next-2'), admin_users_path %><span> <p> <%= @turns[5].date_turn %> </p></span></li>
-            <% end %>
-            
-            <% if @turns[4].user.user_avatar? %>
-              <li><%= link_to image_tag(@turns[4].user.user_avatar_url(:thumb).to_s, class: 'img-rounded next-washer falling-next-1'), admin_users_path%><span> <p> <%= @turns[4].date_turn %> </p></span></li>
-            <% else %>
-              <li><%= image_tag avatar_url(@turns[4].user), class: 'img-rounded next-washer falling-next-1' %><span> <p> <%= @turns[4].date_turn %> </p></span></li>
-            <% end %>
-
-              
-              <div class="u-are-next"><p>Are you Ready?</p></div>
-              <% if @turns[3].user.user_avatar? %>
-                <li><%= link_to image_tag(@turns[3].user.user_avatar_url(:thumb).to_s, class: 'img-rounded tomorrow-washer falling-tomorrow'), admin_users_path%> <span> <p> <%= @turns[3].date_turn %> </p></span>
-                </li>
-              <% else %>
-                <li><%= image_tag avatar_url(@turns[3].user), class: 'img-rounded nexwasher falling-next-1' %><span> <p> <%= @turns[3].date_turn %> </p></span></li>
+            <% @turns.last(5).reverse.each_with_index do |turn, index| %>
+              <% if index == 3 %>
+                <div class="u-are-next"><p>Are you Ready?</p></div>
               <% end %>
-            <li>
-            <% if @turns[2].user.user_avatar? %>
-              <%= link_to image_tag(@turns[2].user.user_avatar_url(:thumb).to_s, class: 'img-rounded today-washer falling-today'), admin_users_path %>
-            <% else %>
-              <%= image_tag avatar_url(@turns[2].user), class: 'img-rounded today-washer falling-today' %>
+              <li>
+                <%= link_to admin_users_path, :data => { :toggle => 'tooltop', :placement => 'left', :title => turn.user.username } do %>
+                  <% if turn.user.user_avatar? %>
+                    <%=image_tag(turn.user.user_avatar_url(:thumb).to_s, class: next_disher_style(index)) %>
+                  <% else %>
+                    <%= image_tag(avatar_url(turn.user), class: next_disher_style(index)) %>
+                  <% end %>
+                <% end %>
+                <% if index == 4 %>
+                  <h3 class="username"><%= turn.user.username %></h3>
+                <% end %>
+                <span> <p> <%= turn.date_turn %> </p></span>
+              </li>
             <% end %>
-              <h3 class="username"><%= @turns[2].user.username %></h3>
-              <span> <p> <%= @turns[2].date_turn %> </p></span>
-            </li>
           </ul>
         </div><!-- /.col-lg-4 -->
 
@@ -95,41 +73,17 @@
               <td><%= @turns[4].date_turn.strftime("%a") %></td>
             </tr>
             <tr class="active">
-              <td>
-                <% if @turns[0].user.user_avatar? %>
-                  <%= link_to image_tag(@turns[0].user.user_avatar_url(:thumb).to_s, class: 'whasher-list'), admin_users_path %>
-                <% else %>
-                  <%= image_tag avatar_url(@turns[0].user), class: 'whasher-list' %>
-                <% end %>
-              </td>
-              <td>
-                <% if @turns[1].user.user_avatar? %>
-                  <%= link_to image_tag(@turns[1].user.user_avatar_url(:thumb).to_s, class: 'whasher-list'), admin_users_path %>
-                <% else %>
-                  <%= image_tag avatar_url(@turns[1].user), class: 'whasher-list' %>
-                <% end %>
-              </td>
-              <td class="wash_today">
-                <% if @turns[2].user.user_avatar? %>
-                  <%= link_to image_tag(@turns[2].user.user_avatar_url(:thumb).to_s, class: 'whasher-list'), admin_users_path %>
-                <% else %>
-                  <%= image_tag avatar_url(@turns[2].user), class: 'whasher-list' %>
-                <% end %>
-              </td>
-              <td>
-                <% if @turns[3].user.user_avatar? %>
-                  <%= link_to image_tag(@turns[3].user.user_avatar_url(:thumb).to_s, class: 'whasher-list'), admin_users_path %>
-                <% else %>
-                  <%= image_tag avatar_url(@turns[3].user), class: 'whasher-list' %>
-                <% end %>
-              </td>
-              <td>
-                <% if @turns[4].user.user_avatar? %>
-                  <%= link_to image_tag(@turns[4].user.user_avatar_url(:thumb).to_s, class: 'whasher-list'), admin_users_path %>
-                <% else %>
-                  <%= image_tag avatar_url(@turns[4].user), class: 'whasher-list' %>
-                <% end %>
-              </td>
+
+              <% @turns.take(5).each_with_index do |turn, index| %>
+                <td class=<%= 'wash_today' if index == 2 %>>
+                  <% if turn.user.user_avatar? %>
+                    <%= link_to image_tag(turn.user.user_avatar_url(:medium).to_s, class: 'whasher-list'), admin_users_path %>
+                  <% else %>
+                    <%= image_tag avatar_url(turn.user), class: 'whasher-list' %>
+                  <% end %>
+                </td>
+              <% end %>
+
             </tr>
             </tbody>
           </table>
