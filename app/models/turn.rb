@@ -6,7 +6,7 @@ class Turn < ActiveRecord::Base
   scope :greater_turn_date_than, -> (date) { where('date_turn >= ?', date) }
 
   def self.date_turn_in_the_past(date)
-    if date.strftime("%a") == "Sat" or "Sun"
+    if date.saturday? or date.sunday?
       date = date-2
     end
     date
