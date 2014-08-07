@@ -24,7 +24,7 @@
                 <% if index == 4 %>
                   <h3 class="username"><%= turn.user.username %></h3>
                 <% end %>
-                <span> <p> <%= turn.date_turn %> </p></span>
+                <span> <p> <%= turn.date_turn.to_formatted_s(:short) %> </p></span>
               </li>
             <% end %>
           </ul>
