@@ -76,10 +76,12 @@
 
           <% @turns.last(5).each_with_index do |turn, index| %>
             <td class=<%= 'wash_today' if index == 2 %>>
-              <% if turn.user.user_avatar? %>
-                <%= link_to image_tag(turn.user.user_avatar_url(:medium).to_s, class: 'whasher-list'), admin_users_path %>
-              <% else %>
-                <%= link_to image_tag(turn.user.gravatar_url(size: 100).to_s, class: 'whasher-list'), admin_users_path %>
+              <%= link_to admin_users_path, :data => { :toggle => 'tooltip', :placement => 'bottom', :title => turn.user.username } do %>
+                <% if turn.user.user_avatar? %>
+                  <%=image_tag(turn.user.user_avatar_url(:medium).to_s, class: 'whasher-list') %>
+                <% else %>
+                  <%= image_tag(turn.user.gravatar_url(size: 100), class: 'whasher-list') %>
+                <% end %>
               <% end %>
             </td>
           <% end %>
