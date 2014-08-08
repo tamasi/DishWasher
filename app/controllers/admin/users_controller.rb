@@ -16,19 +16,19 @@ class Admin::UsersController < Admin::BaseController
   
   def create
     @team = User.new(user_params)
-      @team.is_admin = false
-      @team.organization_id = current_user.organization_id
-      @team.save
-      respond_to do |format|
-        if @team.save
-          recalc_team_turns = User.from_organization(current_user.organization)
-          start_date        = Time.now.to_date
-          ::RegenerateTurns.new(recalc_team_turns, start_date).perform
-          format.html { redirect_to admin_users_path, notice: 'New member was successfully created.' }
-        else
-          format.html { render action: 'new' }
-        end
+    @team.is_admin = false
+    @team.organization_id = current_user.organization_id
+    @team.save
+    respond_to do |format|
+      if @team.save
+        recalc_team_turns = User.from_organization(current_user.organization)
+        start_date        = Time.now.to_date
+        ::RegenerateTurns.new(recalc_team_turns, start_date).perform
+        format.html { redirect_to admin_users_path, notice: 'New member was successfully created.' }
+      else
+        format.html { render action: 'new' }
       end
+    end
   end
 
   def update
