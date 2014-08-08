@@ -66,16 +66,16 @@
         </thead>
         <tbody>
         <tr class="active text-center week-days">
-          <td><%= @turns[5].date_turn.strftime("%a") %></td>
-          <td><%= @turns[6].date_turn.strftime("%a") %></td>
-          <td class="wash_today"><%= @turns[7].date_turn.strftime("%a") %></td>
-          <td><%= @turns[8].date_turn.strftime("%a") %></td>
-          <td><%= @turns[9].date_turn.strftime("%a") %></td>
-        </tr>
-        <tr class="active">
-
           <% @turns.last(5).each_with_index do |turn, index| %>
-            <td class=<%= 'wash_today' if index == 2 %>>
+            <td>
+              <%= turn.date_turn.strftime("%a") %>
+            </td>
+          <% end %>
+        </tr>
+
+        <tr class="active">
+          <% @turns.last(5).each_with_index do |turn, index| %>
+            <td>
               <%= link_to admin_users_path, :data => { :toggle => 'tooltip', :placement => 'bottom', :title => turn.user.username } do %>
                 <% if turn.user.user_avatar? %>
                   <%=image_tag(turn.user.user_avatar_url(:medium).to_s, class: 'whasher-list') %>
