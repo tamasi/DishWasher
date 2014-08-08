@@ -21,4 +21,14 @@ class Turn < ActiveRecord::Base
     where('turns.date_turn < ?', Date.current).order(date_turn: :desc).limit(days_count)
   end
 
+  def self.from_current_date
+    date = Time.now.to_date
+    if date.saturday?
+      date += 2
+    elsif date.sunday?
+      date += 1
+    end
+    where('turns.date_turn >= ?', date).limit(10).order(date_turn: :asc)
+  end
+
 end

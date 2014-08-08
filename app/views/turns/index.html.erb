@@ -1,110 +1,111 @@
-    <% if @current_user.is_admin == true %>
-      <%= render 'layouts/nav_bar_admin.html.erb' %>
-    <% else %>
-      <%= render 'layouts/nav_bar.html.erb' %>
-    <% end %>
-    <div class="container">
+<% if @current_user.is_admin == true %>
+  <%= render 'layouts/nav_bar_admin.html.erb' %>
+<% else %>
+  <%= render 'layouts/nav_bar.html.erb' %>
+<% end %>
+<div class="container">
 
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <div class="col-sm-3">
-          <ul class="washer-list">
-            <% @turns.last(5).reverse.each_with_index do |turn, index| %>
-              <% if index == 3 %>
-                <div class="u-are-next"><p>Are you Ready?</p></div>
+  <!-- Three columns of text below the carousel -->
+  <div class="row">
+    <div class="col-sm-3">
+      <ul class="washer-list">
+        <% @turns.take(5).reverse.each_with_index do |turn, index| %>
+          <% if index == 3 %>
+            <div class="u-are-next"><p>Are you Ready?</p></div>
+          <% end %>
+          <li>
+            <%= link_to admin_users_path, :data => { :toggle => 'tooltop', :placement => 'left', :title => turn.user.username } do %>
+              <% if turn.user.user_avatar? %>
+                <%=image_tag(turn.user.user_avatar_url(:thumb).to_s, class: next_disher_style(index)) %>
+              <% else %>
+                <%= image_tag(turn.user.gravatar_url(size: 215), class: next_disher_style(index)) %>
               <% end %>
-              <li>
-                <%= link_to admin_users_path, :data => { :toggle => 'tooltop', :placement => 'left', :title => turn.user.username } do %>
-                  <% if turn.user.user_avatar? %>
-                    <%=image_tag(turn.user.user_avatar_url(:thumb).to_s, class: next_disher_style(index)) %>
-                  <% else %>
-                    <%= image_tag(turn.user.gravatar_url(size: 215), class: next_disher_style(index)) %>
-                  <% end %>
-                <% end %>
-                <% if index == 4 %>
-                  <h3 class="username"><%= turn.user.username %></h3>
-                <% end %>
-                <span> <p> <%= turn.date_turn.to_formatted_s(:short) %> </p></span>
-              </li>
             <% end %>
-          </ul>
-        </div><!-- /.col-lg-4 -->
+            <% if index == 4 %>
+              <h3 class="username"><%= turn.user.username %></h3>
+            <% end %>
+            <span><p> <%= turn.date_turn.to_formatted_s(:short) %> </p></span>
+          </li>
+        <% end %>
+      </ul>
+    </div><!-- /.col-lg-4 -->
 
-        <div id="delay-hulk" class="col-sm-6 animated bounceIn">
-          <div class="bubble">
-            <h2>Lets play <strong>Hulk Said!</strong>.</h2>
-            <h3>Hul Said he's going to clean dishes today!</h3>
-          </div>
-          <%= image_tag('hulk-said.gif', class: 'hulk-said') %>
-        </div><!-- /.col-lg-4 -->
+    <div id="delay-hulk" class="col-sm-6 animated bounceIn">
+      <div class="bubble">
+        <h2>Lets play <strong>Hulk Said!</strong>.</h2>
+        <h3>Hul Said he's going to clean dishes today!</h3>
+      </div>
+      <%= image_tag('hulk-said.gif', class: 'hulk-said') %>
+    </div><!-- /.col-lg-4 -->
 
-        <div id="delay-calendar" class="col-sm-3 animated bounceInDown">
-          <div class="date">
-            <p class="month"><%= Time.now.strftime("%b") %></p>
-            <p class="day"><%= Time.now.strftime("%d") %></p>
-          </div>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
+    <div id="delay-calendar" class="col-sm-3 animated bounceInDown">
+      <div class="date">
+        <p class="month"><%= Time.now.strftime("%b") %></p>
+        <p class="day"><%= Time.now.strftime("%d") %></p>
+      </div>
+    </div><!-- /.col-lg-4 -->
+  </div><!-- /.row -->
 
-    </div><!-- /.container -->
+</div><!-- /.container -->
 
-    <div class="container-fluid pre-footer">
-      <!-- START THE FEATURETTES -->
+<div class="container-fluid pre-footer">
+  <!-- START THE FEATURETTES -->
 
-      <hr class="divider-dish wow animated slideInLeft">
+  <hr class="divider-dish wow animated slideInLeft">
 
-      <!-- /END THE FEATURETTES -->
+  <!-- /END THE FEATURETTES -->
 
-      <div class="col-sm-12">
-        <div class="col-sm-6 table-responsive wow animated fadeInDown">
-          <div class="pendant"></div>
-          <table class="table table-bordered">
-            <thead class="header">
-              <tr>
-                <th colspan="5">Last Washers</th>
-              </tr>
-            </thead>
-            <tbody>
-            <tr class="active text-center week-days">
-              <td><%= @turns[0].date_turn.strftime("%a") %></td>
-              <td><%= @turns[1].date_turn.strftime("%a") %></td>
-              <td class="wash_today"><%= @turns[2].date_turn.strftime("%a") %></td>
-              <td><%= @turns[3].date_turn.strftime("%a") %></td>
-              <td><%= @turns[4].date_turn.strftime("%a") %></td>
-            </tr>
-            <tr class="active">
+  <div class="col-sm-12">
+    <div class="col-sm-6 table-responsive wow animated fadeInDown">
+      <div class="pendant"></div>
+      <table class="table table-bordered">
+        <thead class="header">
+          <tr>
+            <th colspan="5">Next 5 Washers</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr class="active text-center week-days">
+          <td><%= @turns[5].date_turn.strftime("%a") %></td>
+          <td><%= @turns[6].date_turn.strftime("%a") %></td>
+          <td class="wash_today"><%= @turns[7].date_turn.strftime("%a") %></td>
+          <td><%= @turns[8].date_turn.strftime("%a") %></td>
+          <td><%= @turns[9].date_turn.strftime("%a") %></td>
+        </tr>
+        <tr class="active">
 
-              <% @turns.take(5).each_with_index do |turn, index| %>
-                <td class=<%= 'wash_today' if index == 2 %>>
-                  <% if turn.user.user_avatar? %>
-                    <%= link_to image_tag(turn.user.user_avatar_url(:medium).to_s, class: 'whasher-list'), admin_users_path %>
-                  <% else %>
-                    <%= image_tag avatar_url(turn.user), class: 'whasher-list' %>
-                  <% end %>
-                </td>
+          <% @turns.last(5).each_with_index do |turn, index| %>
+            <td class=<%= 'wash_today' if index == 2 %>>
+              <% if turn.user.user_avatar? %>
+                <%= link_to image_tag(turn.user.user_avatar_url(:medium).to_s, class: 'whasher-list'), admin_users_path %>
+              <% else %>
+                <%= image_tag avatar_url(turn.user), class: 'whasher-list' %>
               <% end %>
+              <h3 class="username"><%= turn.user.username %></h3>
+            </td>
+          <% end %>
 
-            </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="marquee"></div>
-      </div><!-- /.col-lg-4 -->      
-      <div class="clear"></div>
-      <!-- FOOTER -->
-      <footer class="animated fadeInUp">
-        <p class="comp"><a href="http://hashdog.io">Dishwasher App</a> - 2014</p>
-        <p class="dev">By <a href="http://www.hashdog.com">Hashdog Software Factory</a>.</p>
-      </footer>
-
+        </tr>
+        </tbody>
+      </table>
     </div>
+    <div class="marquee"></div>
+  </div><!-- /.col-lg-4 -->      
+  <div class="clear"></div>
+  <!-- FOOTER -->
+  <footer class="animated fadeInUp">
+    <p class="comp"><a href="http://hashdog.io">Dishwasher App</a> - 2014</p>
+    <p class="dev">By <a href="http://www.hashdog.com">Hashdog Software Factory</a>.</p>
+  </footer>
 
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script>
-      wow = new WOW(
-        {
-          offset:       200          // default
-        }
-      )
-      new WOW().init();
-    </script>
+</div>
+
+<!-- Placed at the end of the document so the pages load faster -->
+<script>
+  wow = new WOW(
+    {
+      offset:       200          // default
+    }
+  )
+  new WOW().init();
+</script>
