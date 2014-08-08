@@ -18,7 +18,7 @@
                   <% if turn.user.user_avatar? %>
                     <%=image_tag(turn.user.user_avatar_url(:thumb).to_s, class: next_disher_style(index)) %>
                   <% else %>
-                    <%= image_tag(avatar_url(turn.user), class: next_disher_style(index)) %>
+                    <%= image_tag(turn.user.gravatar_url(size: 215), class: next_disher_style(index)) %>
                   <% end %>
                 <% end %>
                 <% if index == 4 %>
@@ -33,7 +33,7 @@
         <div id="delay-hulk" class="col-sm-6 animated bounceIn">
           <div class="bubble">
             <h2>Lets play <strong>Hulk Said!</strong>.</h2>
-            <h3>I Said he going to clean dishes today!</h3>
+            <h3>Hul Said he's going to clean dishes today!</h3>
           </div>
           <%= image_tag('hulk-said.gif', class: 'hulk-said') %>
         </div><!-- /.col-lg-4 -->

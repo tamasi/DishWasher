@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 
+  include Gravtastic
+  gravtastic
 	#set Relation between User and Organization
 	belongs_to :organization
 
