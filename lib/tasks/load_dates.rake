@@ -35,4 +35,13 @@ namespace :load_dates do
         c += 1
       end
     end
+
+    desc "Assign a Order Number to user from organization"
+    task assign_order: :environment do
+      @team = User.where(organization_id: 1)
+      @team.each_with_index do | user, index |
+        user.order_number = index
+        user.save
+      end
+    end
 end

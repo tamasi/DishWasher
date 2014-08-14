@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
 
 
   #query to bringing back only a user belongs to a organization
-	scope :org, -> (user) {where("organization_id = ?", user.organization_id)} 
+	scope :org, -> (user) { where("organization_id = ?", user.organization_id) } 
 
   #User.from_organization(organization)
   scope :from_organization, -> (organization) { where(organization_id: organization) }
