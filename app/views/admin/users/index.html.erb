@@ -43,9 +43,14 @@
 </div>
 <div class="row">
   <div class="col-sm-6 col-sm-offset-3">
-    <%= link_to 'Back Home', root_path, class:"btn btn-default" %>
-    <%= link_to 'New Member', new_admin_user_path, class:"btn btn-success" %>
-    <%= link_to 'Regenerate turns', regenerate_turns_turns_path, class:"btn btn-danger" %>
+    <%= link_to root_path, class:"btn btn-default btn-lg" do %>
+      <i class="glyphicon glyphicon-home"></i>
+      Home
+    <% end %>
+    <%= link_to new_admin_user_path, class:"btn btn-success btn-lg" do %>
+      <i class="glyphicon glyphicon-user"></i>
+      New Member
+    <% end %>
   </div>
 </div>
 
@@ -53,6 +58,10 @@
   <!-- /END THE FEATURETTES -->     
   <div class="table-hulk"></div>
   <!-- FOOTER -->
+  <footer class="animated fadeInUp">
+    <p class="comp"><a href="http://hashdog.io">Dishwasher App</a> - 2014</p>
+    <p class="dev">By <a href="http://www.hashdog.com">Hashdog Software Factory</a>.</p>
+  </footer>
 </div>
 
     <!-- Placed at the end of the document so the pages load faster -->

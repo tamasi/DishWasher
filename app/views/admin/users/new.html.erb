@@ -1,22 +1,56 @@
-<h2>Add new user for the washerTeam</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4 login-box text-center">
+      <%= form_for(@team, url: admin_users_path(@user)) do |f| %>
+        <h3 class="into-title">Add new user for the washerTeam</h3>
+        <div class="col-sm-12 form-group input-group login-padding">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+          <%= f.text_field :username, autofocus: true, class: 'form-control', placeholder: 'User' %>
+          <%#input class="form-control" type="text" placeholder="User" id="date1"> %>
+        </div>
 
-<%#= form_for @team, url: admin_users_path(@user), html: { method: :post } do |f|  %>
-<%= form_for(@team, url: admin_users_path(@user)) do |f| %>
-<%#= devise_error_messages! %>
-	<div>
-		<%= f.label :username %> <br>
-		<%= f.text_field :username %>
-	</div>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+        <div class="col-sm-12 form-group input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+          <%= f.text_field :email, class: 'form-control', placeholder: 'e-mail' %>
+          <%#input class="form-control" type="text" placeholder="User" id="date1"> %>
+        </div>
 
-  <div><%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
+        <div class="col-sm-12 form-group input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+          <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'Password' %>
+        </div>
 
-  <div><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+        <div class="col-sm-12 form-group input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+          <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control', placeholder: 'Password Confirmation' %>
+        </div>
 
-  <div><%= f.submit "Sign up" %></div>
+        <div class="login-botons">
+          <%= link_to "Back Home", root_path, class: "btn btn-default btn-lg" %>
+          <!-- <a href="index.html" class="btn btn-default btn-lg">Back Home</a> -->
+          <%= f.submit "Sign Up", class: 'btn btn-success btn-lg' %><br/>
+          <%#button type="submit" class="btn btn-success btn-lg">Log In</button> %>
+        </div>
+      <% end %>
+    </div><!-- /.col-lg-4 -->
+  </div>
+</div>
 
-<% end %>
 
+<div class="container-fluid">
+  <!-- /END THE FEATURETTES -->     
+  <div class="login-hulk"></div>
+  <!-- FOOTER -->
+</div>
+
+<!-- Placed at the end of the document so the pages load faster -->
+<!--link href="css/style.css" rel="stylesheet" -->
+
+<script>
+  wow = new WOW(
+    {
+      offset:       200          // default
+    }
+  )
+  new WOW().init();
+</script>
