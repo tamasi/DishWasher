@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
 
   #User.from_organization(organization)
   scope :from_organization, -> (organization) { where(organization_id: organization) }
-  scope :from_organization_desc, -> (organization) { where(organization_id: organization).order(created_at: :desc) }
+  scope :from_organization_asc, -> (organization) { where(organization_id: organization).order(created_at: :asc) }
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

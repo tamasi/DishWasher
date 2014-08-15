@@ -10,7 +10,6 @@ class GenerateTurns
     last_day_of_year = Time.new.end_of_year.to_date
 
     while start_date <= last_day_of_year
-      team.shuffle
       team.each do |member|
         Turn.create(user_id: member.id, date_turn: start_date)
         get_next_workable_day
