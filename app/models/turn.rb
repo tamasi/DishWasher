@@ -31,4 +31,8 @@ class Turn < ActiveRecord::Base
     where('turns.date_turn >= ?', date).limit(10).order(date_turn: :asc)
   end
 
+  def self.from_chose_date(start_date = Time.now.to_date, end_date = Time.now.to_date+1)
+    where('turns.date_turn >= ?', start_date).where('turns.date_turn <= ?', end_date)
+  end
+
 end
