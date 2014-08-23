@@ -35,4 +35,8 @@ class Turn < ActiveRecord::Base
     where('turns.date_turn >= ?', start_date).where('turns.date_turn <= ?', end_date)
   end
 
+  def self.this_date(this_date = Time.now.to_date)
+    where(date_turn: this_date)
+  end
+
 end

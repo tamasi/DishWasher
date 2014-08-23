@@ -10,26 +10,27 @@ class TurnBreak
   def perform
     turns_break = Turn.from_users(user_ask_for_break.id).from_chose_date(start_date, end_date)
 
-    turns_break.each_with_index do |turn_break, index|
-      next_index = index +1
-      turn_change = turn_break.date_turn
-      turn_break.destroy
-      while turns_break[next_index] != nil && turn_change <= turns_break[next_index].date_turn
-        next_turn_to_rotate = Turn.find_by(date_turn: turn_change)
-        next_turn_to_rotate.update(date_turn: turn_change)
-        next_workable_day(turn_change)
+    turns_break.each_with_index do |turn, index|
+      next_index     = index + 1
+      turn_to_change = turn.date_turn
+      empty_day      = turn.date_turn
+      turn.destroy
+      while empty_day <= turns_break[next_index].date_turn
+        next_workable_day(turn_to_change)
+        next_turn_to_rotate = Turn.for_organization(user_ask_for_break.organization).this_date(turn_to_change)
+        next_turn_to_rotate.first.update(date_turn: empty_day)
+        empty_day = turn_to_change
       end
     end
 
-    puts 'fin'
   end
 
   private
-    def next_workable_day(turn_change)
-      if turn_change.friday?
-        @turn_change += 3
+    def next_workable_day(turn_to_change)
+      if turn_to_change.friday?
+        @turn_to_change += 3
       else
-        @turn_change += 1
+        @turn_to_change += 1
       end
     end
 end
