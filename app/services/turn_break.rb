@@ -1,14 +1,14 @@
 class TurnBreak
-  attr_reader :user_ask_for_break, :start_date, :end_date
+  attr_reader :user_ask_for_break, :turn_to_change, :end_date
 
-  def initialize(user_ask_for_break, start_date, end_date)
+  def initialize(user_ask_for_break, turn_to_change, end_date)
     @user_ask_for_break = user_ask_for_break
-    @start_date         = start_date
+    @turn_to_change     = turn_to_change
     @end_date           = end_date
   end
 
   def perform
-    turns_break = Turn.from_users(user_ask_for_break.id).from_chose_date(start_date, end_date)
+    turns_break = Turn.from_users(user_ask_for_break.id).from_chose_date(turn_to_change, end_date)
 
     turns_break.each_with_index do |turn, index|
       next_index     = index + 1
@@ -23,7 +23,9 @@ class TurnBreak
         next_workable_day
         puts turn_to_change
         next_turn_to_rotate = Turn.for_organization(user_ask_for_break.organization).this_date(turn_to_change)
-        next_turn_to_rotate.first.update(date_turn: empty_day)
+        if next_turn_to_rotate
+          next_turn_to_rotate.first.update(date_turn: empty_day)
+        end
         empty_day = turn_to_change
       end
     end
@@ -37,6 +39,6 @@ class TurnBreak
       else
         @turn_to_change += 1
       end
-      puts @turn_to_change
+      puts turn_to_change
     end
 end
