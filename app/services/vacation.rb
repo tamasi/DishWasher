@@ -1,4 +1,4 @@
-class TurnBreak
+class Vacation
   attr_reader :user_ask_for_break, :turn_to_change, :end_date
 
   def initialize(user_ask_for_break, turn_to_change, end_date)
