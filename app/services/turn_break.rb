@@ -9,7 +9,9 @@ class TurnBreak
 
   def perform
     turns_break = Turn.from_users(user_ask_for_break.id).from_chose_date(turn_to_change, end_date)
-
+    if turns_break.size < 2
+      turns_break << Turn.from_users(user_ask_for_break.id).from_chose_date(end_date, Time.new.end_of_year.to_date).first
+    end
     turns_break.each_with_index do |turn, index|
       next_index     = index + 1
       turn_to_change = turn.date_turn
@@ -21,12 +23,14 @@ class TurnBreak
       while empty_day <= turns_break[next_index].date_turn
         puts turn_to_change
         next_workable_day
-        puts turn_to_change
-        next_turn_to_rotate = Turn.for_organization(user_ask_for_break.organization).this_date(turn_to_change)
+        puts @turn_to_change
+        next_turn_to_rotate = Turn.for_organization(user_ask_for_break.organization).this_date(@turn_to_change)
         if next_turn_to_rotate
           next_turn_to_rotate.first.update(date_turn: empty_day)
+          puts @turn_to_change
+          puts empty_day
         end
-        empty_day = turn_to_change
+        empty_day = @turn_to_change
       end
     end
 
