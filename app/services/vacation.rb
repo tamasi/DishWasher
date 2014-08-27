@@ -9,26 +9,36 @@ class Vacation
 
   def perform
     turns_break = Turn.from_users(user_ask_for_break.id).from_chose_date(turn_to_change, end_date)
+    add = Turn.from_users(user_ask_for_break.id).from_chose_date(end_date, Time.new.end_of_year.to_date)
     if turns_break.size < 2
-      turns_break << Turn.from_users(user_ask_for_break.id).from_chose_date(end_date, Time.new.end_of_year.to_date).first
+      if turns_break.first != add.first
+        turns_break << add.first
+      else
+        turns_break << add[1]
+      end
     end
+    puts "Turnos a cambia: #{turns_break.map(&:date_turn)}"
     turns_break.each_with_index do |turn, index|
       next_index     = index + 1
       turn_to_change = turn.date_turn
       empty_day      = turn.date_turn
-      puts next_index
-      puts turn_to_change
-      puts turns_break[next_index].date_turn
+      puts "Next index: #{next_index}"
+      puts "Turn to change: #{turn_to_change}"
+      puts "Empty day: #{empty_day}"
+      puts "Siguiente turno: #{turns_break[next_index].date_turn}"
       turn.destroy
+      
       while empty_day <= turns_break[next_index].date_turn
-        puts turn_to_change
+        puts "Ingreso al while #{index}"
+        puts "Antes de next workable day: #{turn_to_change}"
         next_workable_day
-        puts @turn_to_change
+        puts "Despues del WD: #{@turn_to_change}"
         next_turn_to_rotate = Turn.for_organization(user_ask_for_break.organization).this_date(@turn_to_change)
         if next_turn_to_rotate.size != 0
+          puts "Next Turn To Rotate: #{next_turn_to_rotate.first.date_turn}"
+          puts "Turno empty day: #{empty_day}"
+          puts "Turno @turn to changed: #{@turn_to_change}"
           next_turn_to_rotate.first.update(date_turn: empty_day)
-          puts "Turno a cambiar: #{@turn_to_change}"
-          puts "Turno en next-turn: #{empty_day}"
         end
         empty_day = @turn_to_change
       end
