@@ -82,6 +82,11 @@ class TurnsController < ApplicationController
     redirect_to turns_path
   end
 
+  def vacation_request
+    user = current_user
+    ::Vacation.new(user, start_vacation, end_vacation).perform
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_turn

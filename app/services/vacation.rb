@@ -25,22 +25,23 @@ class Vacation
       puts "Next index: #{next_index}"
       puts "Turn to change: #{turn_to_change}"
       puts "Empty day: #{empty_day}"
-      puts "Siguiente turno: #{turns_break[next_index].date_turn}"
-      turn.destroy
-      
-      while empty_day <= turns_break[next_index].date_turn
-        puts "Ingreso al while #{index}"
-        puts "Antes de next workable day: #{turn_to_change}"
-        next_workable_day
-        puts "Despues del WD: #{@turn_to_change}"
-        next_turn_to_rotate = Turn.for_organization(user_ask_for_break.organization).this_date(@turn_to_change)
-        if next_turn_to_rotate.size != 0
-          puts "Next Turn To Rotate: #{next_turn_to_rotate.first.date_turn}"
-          puts "Turno empty day: #{empty_day}"
-          puts "Turno @turn to changed: #{@turn_to_change}"
-          next_turn_to_rotate.first.update(date_turn: empty_day)
+      if turns_break[next_index] != nil
+        puts "Siguiente turno: #{turns_break[next_index].date_turn}"
+        turn.destroy
+        while empty_day <= turns_break[next_index].date_turn
+          puts "Ingreso al while #{index}"
+          puts "Antes de next workable day: #{turn_to_change}"
+          next_workable_day
+          puts "Despues del WD: #{@turn_to_change}"
+          next_turn_to_rotate = Turn.for_organization(user_ask_for_break.organization).this_date(@turn_to_change)
+          if next_turn_to_rotate.size != 0
+            puts "Next Turn To Rotate: #{next_turn_to_rotate.first.date_turn}"
+            puts "Turno empty day: #{empty_day}"
+            puts "Turno @turn to changed: #{@turn_to_change}"
+            next_turn_to_rotate.first.update(date_turn: empty_day)
+          end
+          empty_day = @turn_to_change
         end
-        empty_day = @turn_to_change
       end
     end
 
