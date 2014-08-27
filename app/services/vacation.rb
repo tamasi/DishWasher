@@ -25,10 +25,10 @@ class Vacation
         next_workable_day
         puts @turn_to_change
         next_turn_to_rotate = Turn.for_organization(user_ask_for_break.organization).this_date(@turn_to_change)
-        if next_turn_to_rotate
+        if next_turn_to_rotate.size != 0
           next_turn_to_rotate.first.update(date_turn: empty_day)
-          puts @turn_to_change
-          puts empty_day
+          puts "Turno a cambiar: #{@turn_to_change}"
+          puts "Turno en next-turn: #{empty_day}"
         end
         empty_day = @turn_to_change
       end
@@ -43,6 +43,5 @@ class Vacation
       else
         @turn_to_change += 1
       end
-      puts turn_to_change
     end
 end
