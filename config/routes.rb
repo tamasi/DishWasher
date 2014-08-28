@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       get :generate_turns
       get :regenerate_turns
       get :vacation_request
+      get :vacation_request_new
     end
   end
 
