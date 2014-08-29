@@ -41,12 +41,12 @@
 
             <div class="col-lg-12 bg-transparent">
 
-              <form class="form">
+              <%= form_for @vacation_param, html: { method: :put, multipart: true, class: 'form'} do |f| %>
                 <h4>Please, set the date from your holidays</h4>
                 <div class="col-sm-6 text-center">
                   <div class="col-sm-12 form-group input-group">
                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                    <input class="form-control" type="text" placeholder="Begin at" id="date1">
+                    <%= f.file_field :start_date, class: 'form-control', placeholder: 'Begin at', id: 'date1' %>
                   </div>
 
                   <div class="col-sm-12 form-group input-group">
@@ -57,7 +57,7 @@
                   <button type="submit" class="btn btn-success btn-lg">Send</button>
 
                 </div>
-              </form>
+              <% end %>
               <div class="col-sm-6">
                 <p>You can add the date to tell hulk when you have the Holidays. Enter the fist day that you'll on holidays</p>
               </div>

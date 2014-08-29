@@ -83,6 +83,7 @@ class TurnsController < ApplicationController
   end
 
   def vacation_request_new
+    @vacation_param = ::Vacation.new( current_user, start_vacation, end_vacation )
   end
 
   def vacation_request
