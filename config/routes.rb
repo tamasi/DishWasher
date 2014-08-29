@@ -4,8 +4,6 @@ Rails.application.routes.draw do
     collection do
       get :generate_turns
       get :regenerate_turns
-      get :vacation_request
-      get :vacation_request_new
     end
   end
 
@@ -14,7 +12,8 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users
   end
-    
+
+  resources :vacations, only: [:index, :show, :new, :create]
   
   devise_for :users,
     controllers: {

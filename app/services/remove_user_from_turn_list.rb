@@ -1,15 +1,15 @@
-class Vacation
-  attr_reader :user_ask_for_break, :turn_to_change, :end_date
+class RemoveUserFromTurnList
+  attr_reader :user, :turn_to_change, :end_date
 
-  def initialize(user_ask_for_break, turn_to_change, end_date)
-    @user_ask_for_break = user_ask_for_break
-    @turn_to_change     = turn_to_change
-    @end_date           = end_date
+  def initialize(user, turn_to_change, end_date)
+    @user = user
+    @turn_to_change     = turn_to_change.to_date
+    @end_date           = end_date.to_date
   end
 
   def perform
-    turns_break = Turn.from_users(user_ask_for_break.id).from_chose_date(turn_to_change, end_date)
-    add = Turn.from_users(user_ask_for_break.id).from_chose_date(end_date, Time.new.end_of_year.to_date)
+    turns_break = Turn.from_users(user.id).from_chose_date(turn_to_change, end_date)
+    add = Turn.from_users(user.id).from_chose_date(end_date, Time.new.end_of_year.to_date)
     if turns_break.size < 2
       if turns_break.first != add.first
         turns_break << add.first
@@ -33,7 +33,7 @@ class Vacation
           puts "Antes de next workable day: #{turn_to_change}"
           next_workable_day
           puts "Despues del WD: #{@turn_to_change}"
-          next_turn_to_rotate = Turn.for_organization(user_ask_for_break.organization).this_date(@turn_to_change)
+          next_turn_to_rotate = Turn.for_organization(user.organization).this_date(@turn_to_change)
           if next_turn_to_rotate.size != 0
             puts "Next Turn To Rotate: #{next_turn_to_rotate.first.date_turn}"
             puts "Turno empty day: #{empty_day}"
@@ -49,7 +49,7 @@ class Vacation
 
   private
     def next_workable_day
-      if turn_to_change.friday?
+      if turn_to_change.to_date.friday?
         @turn_to_change += 3
       else
         @turn_to_change += 1

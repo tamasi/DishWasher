@@ -1,0 +1,91 @@
+<div id="wrapper">
+
+      <!-- Sidebar -->
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <%= link_to root_path, class:"navbar-brand" do %>
+            <i class="fa fa-arrow-circle-left"></i> Back home
+          <% end %>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav side-nav">
+            <li class="active"><a href="index.html"><i class="fa fa-edit"></i> Edit Profile</a></li>
+            <li><a href="settings.html"><i class="fa fa-cog"></i> Settings</a></li>
+          </ul>
+
+        </div><!-- /.navbar-collapse -->
+      </nav>
+
+      <div id="page-wrapper">
+
+        <div class="row">
+          <div class="col-lg-12">
+            <h1>Holiday Request</h1>
+            <div class="breadcrumb">
+              <p>Tell Hulk about your holidays and preay to get it.</p>
+            </div>
+          </div>
+        </div><!-- /.row -->
+
+        <div class="row">
+          <div class="col-sm-6 zposition">
+
+            <div class="col-lg-12 bg-transparent">
+
+              <%= form_tag vacations_path, html: { method: :post, class: 'form'} do %>
+                <h4>Please, set the date from your holidays</h4>
+                <div class="col-sm-6 text-center">
+                  <div class="col-sm-12 form-group input-group">
+                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                    <%= date_field_tag :start_date, class: 'form-control', placeholder: 'Begin at', id: 'date1' %>
+                  </div>
+
+                  <div class="col-sm-12 form-group input-group">
+                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                    <%= date_field_tag :end_date, class: 'form-control', placeholder: 'End at', id: 'date2' %>
+                  </div>
+
+                  <button type="submit" class="btn btn-success btn-lg">Send</button>
+
+                </div>
+              <% end %>
+              <div class="col-sm-6">
+                <p>You can add the date to tell hulk when you have the Holidays. Enter the fist day that you'll on holidays</p>
+              </div>
+            </div>
+            <div class="clear"></div>
+          </div>
+          <div class="col-sm-6 no-padding-right">
+            <%= image_tag "bar-hulk.png", class: "bar-hulk" %>
+            <div class="bar"></div>
+            <p class="faqs">FAQs, Recomendation? <a href="mailto:team@hashdog.com">Please let us know</a>.</p>
+
+          </div>
+        </div><!-- /.row -->
+
+      </div><!-- /#page-wrapper -->
+
+    </div><!-- /#wrapper -->
+
+    <!-- JavaScript -->
+    <script type="text/javascript">
+    // When the document is ready
+    $(document).ready(function () {
+        
+        $('#date1').datepicker({
+            format: "dd/mm/yyyy"
+        });  
+        $('#date2').datepicker({
+            format: "dd/mm/yyyy"
+        });
+    });
+  </script>
