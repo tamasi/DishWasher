@@ -39,4 +39,7 @@ class Turn < ActiveRecord::Base
     where(date_turn: this_date)
   end
 
+  def self.next_turn_to_rotate(date = Time.now.to_date)
+    where("date_turn > ?", date).order(date_turn: :asc)
+  end
 end
