@@ -2,14 +2,14 @@ class RemoveUserFromTurnList
   attr_reader :user, :turn_to_change, :end_date
 
   def initialize(user, turn_to_change, end_date)
-    @user = user
-    @turn_to_change     = turn_to_change.to_date
-    @end_date           = end_date.to_date
+    @user           = user
+    @turn_to_change = turn_to_change.to_date
+    @end_date       = end_date.to_date
   end
 
   def perform
     turns_break = Turn.from_users(user.id).from_chose_date(turn_to_change, end_date)
-    add = Turn.from_users(user.id).from_chose_date(end_date, Time.new.end_of_year.to_date)
+    add         = Turn.from_users(user.id).from_chose_date(end_date, Time.new.end_of_year.to_date)
     if turns_break.size < 2
       if turns_break.first != add.first
         turns_break << add.first
