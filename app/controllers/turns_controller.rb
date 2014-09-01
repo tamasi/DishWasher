@@ -1,5 +1,5 @@
 class TurnsController < ApplicationController
-  before_action :authenticate_admin!, except: [:index]
+  before_action :authenticate_admin!, except: [:index, :rotate_turn_with_next_washer]
   before_action :set_turn, only: [:show, :edit, :update, :destroy]
   before_action :check_organization, only: [:index]
   has_scope :from_date
@@ -89,6 +89,12 @@ class TurnsController < ApplicationController
   def vacation_request
     user = current_user
     ::Vacation.new(user, start_vacation, end_vacation).perform
+  end
+
+  def rotate_turn_with_next_washer
+    user = current_user
+    ::RotateTurnWithNextWasher.new(user).perform
+    redirect_to root_path
   end
 
   private

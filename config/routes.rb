@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     collection do
       get :generate_turns
       get :regenerate_turns
+      get :rotate_turn_with_next_washer
     end
   end
 
