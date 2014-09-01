@@ -5,4 +5,8 @@ class RotateTurnWhitNextWasher
     @user = user
     @turn = turn
   end
+
+  def perform
+    
+  end
 end
