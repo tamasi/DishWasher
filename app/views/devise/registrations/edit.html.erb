@@ -105,49 +105,29 @@
               <p>This is for change turns.</p>
             </div>
 
-            <div class="col-sm-4">
-              <div class="panel panel-info-profile">
-                <div class="panel-heading-profile">
-                  <div class="row">
-                    <div class="col-xs-12 text-center">
-                      <h4>Rotate</h4>
-                      <p>You can rotate your turn with the next <b>Washer</b>.</p>
-                    </div>
-                  </div>
-                </div>
-                <a href="#">
-                  <div class="panel-footer announcement-bottom">
+            <% if current_user.is_admin == true || @user_turn_to_day.user == current_user %>
+              <div class="col-sm-4">
+                <div class="panel panel-info-profile">
+                  <div class="panel-heading-profile">
                     <div class="row">
                       <div class="col-xs-12 text-center">
-                        <%= link_to 'Ask for', rotate_turn_with_next_washer_turns_path, class: 'btn btn-default' %>
+                        <h4>Rotate</h4>
+                        <p>You can rotate your turn with the next <b>Washer</b>.</p>
                       </div>
                     </div>
                   </div>
-                </a>
-              </div>
-            </div>
-
-            <div class="col-sm-4">
-              <div class="panel panel-info-profile">
-                <div class="panel-heading-profile">
-                  <div class="row">
-                    <div class="col-xs-12 text-center">
-                      <h4>Mercy</h4>
-                      <p>Didn´t assist to work? Ask Hulk Mercy.</p>
-                    </div>
-                  </div>
-                </div>
-                <a href="#">
-                  <div class="panel-footer announcement-bottom">
-                    <div class="row">
-                      <div class="col-xs-12 text-center">
-                        <a href="request.html" class="btn btn-default">Please</a>
+                  <a href="#">
+                    <div class="panel-footer announcement-bottom">
+                      <div class="row">
+                        <div class="col-xs-12 text-center">
+                          <%= link_to 'Ask for', rotate_turn_with_next_washer_turns_path, class: 'btn btn-default' %>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </a>
+                  </a>
+                </div>
               </div>
-            </div>
+            <% end %>
 
             <div class="col-sm-4">
               <div class="panel panel-info-profile">
