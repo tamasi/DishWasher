@@ -51,9 +51,11 @@
       <i class="glyphicon glyphicon-user"></i>
       New Member
     <% end %>
-    <%= link_to regenerate_turns_turns_path, class:"btn btn-warning btn-lg" do %>
-      <i class="glyphicon glyphicon-user"></i>
-      Regenerate Turns
+    <% if current_user.is_admin == true %>
+      <%= link_to regenerate_turns_turns_path, class:"btn btn-warning btn-lg" do %>
+        <i class="glyphicon glyphicon-user"></i>
+        Regenerate Turns
+      <% end %>
     <% end %>
 
   </div>

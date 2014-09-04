@@ -10,11 +10,17 @@ class VacationsController < ApplicationController
   end
 
   def create
-    @vacation = RemoveUserFromTurnList.new(current_user, params[:start_date], params[:end_date]).perform
 
+    if params[:username] == nil
+      @vacation = RemoveUserFromTurnList.new(current_user, params[:start_date], params[:end_date]).perform
+    else
+      user = User.find_by(username: params[:username]).first
+      @vacation = RemoveUserFromTurnList.new(user, params[:start_date], params[:end_date]).perform
+    end
     respond_to do |format|
         format.html { redirect_to edit_user_registration_path, notice: 'Vacation Granted.' }
     end
+
   end
 
 

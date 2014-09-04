@@ -40,7 +40,7 @@
           <div class="col-sm-6 zposition">
 
             <div class="col-lg-12 bg-transparent">
-
+            <% if current_user.is_admin == false %>
               <%= form_tag vacations_path, html: { method: :post, class: 'form'} do %>
                 <h4>Please, set the date from your holidays</h4>
                 <div class="col-sm-6 text-center">
@@ -53,11 +53,32 @@
                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                     <%= date_field_tag :end_date, nil, class: 'form-control', placeholder: 'End at', id: 'date2' %>
                   </div>
-
                   <button type="submit" class="btn btn-success btn-lg">Send</button>
-
                 </div>
               <% end %>
+            <% else %>
+              <%= form_tag vacations_path, html: { method: :post, class: 'form'} do %>
+                <h4>Please, set the date and member to give a holidays</h4>
+                <div class="col-sm-6 text-center">
+                  <div class="col-sm-12 form-group input-group">
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                    <%= text_field_tag :username, nil, class: 'form-control', placeholder: 'End at', id: 'date2' %>
+                  </div>
+
+                  <div class="col-sm-12 form-group input-group">
+                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                    <%= date_field_tag :start_date, nil, class: 'form-control', placeholder: 'End at', id: 'date2' %>
+                  </div>
+
+                  <div class="col-sm-12 form-group input-group">
+                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                    <%= date_field_tag :end_date, nil, class: 'form-control', placeholder: 'End at', id: 'date2' %>
+                  </div>
+                  <button type="submit" class="btn btn-success btn-lg">Send</button>
+                </div>
+              <% end %>
+            <% end %>
+
               <div class="col-sm-6">
                 <p>You can add the date to tell hulk when you have the Holidays. Enter the fist day that you'll on holidays</p>
               </div>
