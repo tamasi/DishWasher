@@ -3,7 +3,7 @@ class GenerateTurns
 
   def initialize(team, start_date)
     @team = team
-    @start_date = start_date-2
+    @start_date = start_date
   end
 
   def perform
