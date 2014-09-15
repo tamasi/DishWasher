@@ -67,7 +67,7 @@ class TurnsController < ApplicationController
 
   #get /generate_turns
   def generate_turns
-      team       = User.from_organization(current_user.organization)
+      team       = User.from_organization_asc(current_user.organization)
       start_date = Time.now.to_date
 
       ::GenerateTurns.new(team, start_date).perform
@@ -75,7 +75,7 @@ class TurnsController < ApplicationController
   end
 
   def regenerate_turns
-    team       = User.from_organization(current_user.organization)
+    team       = User.from_organization(current_user.organization).order(created_at: :asc)
     start_date = Time.now.to_date+7
 
     ::RegenerateTurns.new(team, start_date).perform

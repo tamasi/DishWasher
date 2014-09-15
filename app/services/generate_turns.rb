@@ -8,6 +8,11 @@ class GenerateTurns
 
   def perform
     last_day_of_year = Time.new.end_of_year.to_date
+    if @start_date.saturday?
+      @start_date += 2
+    elsif @start_date.sunday?
+      @start_date +=1
+    end
 
     while start_date <= last_day_of_year
       team.each do |member|
