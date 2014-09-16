@@ -16,7 +16,10 @@ For more info and more free Bootstrap 3 HTML themes, visit http://startbootstrap
 
 #page-wrapper {
   width: 100%;
-  padding: 5px 15px;
+  padding: 40px 0;
+}
+.input-group-addon:first-child {
+  color: $brown
 }
 
 /* Nav Messages */
@@ -101,8 +104,11 @@ table.tablesorter thead tr th:hover {
   margin-top: -70px;
   z-index: -1
 }
-.faqs{
-  padding-top: 50px;
+.faqs {
+  padding-top: 30px;
+  float: right;
+  padding-right: 10px;
+  color: white;
 }
 .bar-hulk {
   margin-top: -100px;
@@ -182,92 +188,19 @@ label.css-label {
 }
 .fa-arrow-circle-left {
   position: relative;
-  -webkit-animation: fallBack linear .5s;
-  -o-animation: fallBack linear .5s;
-  -moz-animation: fallBack linear .5s;
-  animation: fallBack linear .5s;
+  left: 0;
+  transition: 1.5s all;
+  -webkit-transition: 1.5s all;
+  -moz-transition: 1.5s all;
+  -o-transition: 1.5s all;
 }
 a.navbar-brand:hover .fa-arrow-circle-left {
-  -webkit-animation: backHome linear 1.5s;
-  -o-animation: backHome linear 1.5s;
-  -moz-animation: backHome linear 1.5s;
-  animation: backHome linear 1.5s;
-}
-@-webkit-keyframes backHome{
-  0% {
-    left: 0px;
-  }
-  10% {
-    left: 10px;
-  }
-  100% {
-    left:-300px;
-  }
-}
-@-o-keyframes backHome{
-  0% {
-    left: 0px;
-  }
-  10% {
-    left: 10px;
-  }
-  100% {
-    left:-300px;
-  }
-}
-@-moz-keyframes backHome{
-  0% {
-    left: 0px;
-  }
-  10% {
-    left: 10px;
-  }
-  100% {
-    left:-300px;
-  }
-}
-@keyframes backHome{
-  0% {
-    left: 0px;
-  }
-  10% {
-    left: 10px;
-  }
-  100% {
-    left:-300px;
-  }
-}
-@-webkit-keyframes fallBack{
-  0% {
-    top: -100px;
-  }
-  100% {
-    top:0px;
-  }
-}
-@-o-keyframes fallBack{
-  0% {
-    top: -100px;
-  }
-  100% {
-    top:0px;
-  }
-}
-@-moz-keyframes fallBack{
-  0% {
-    top: -100px;
-  }
-  100% {
-    top:0px;
-  }
-}
-@keyframes fallBack{
-  0% {
-    top: -100px;
-  }
-  100% {
-    top:0px;
-  }
+  position: relative;
+  left: -200px;
+  transition: 1.5s all;
+  -webkit-transition: 1.5s all;
+  -moz-transition: 1.5s all;
+  -o-transition: 1.5s all;
 }
 .side-nav li {
   border-left: 4px solid #222222;
@@ -288,10 +221,6 @@ a.navbar-brand:hover .fa-arrow-circle-left {
 
   #wrapper {
 	padding-left: 225px;
-  }
-
-  #page-wrapper {
-	padding: 0;
   }
 
   /* Side Nav */

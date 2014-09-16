@@ -69,12 +69,12 @@
               </div>
 
               <div class="form-group input-group">
-                <span class="input-group-addon">@</span>
+                <span class="input-group-addon"><i class="fa fa-at"></i></span>
                 <%= f.email_field :email, class: 'form-control', placeholder: 'e-mail' %>
               </div>
 
               <div class="form-group input-group">
-                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                <span class="input-group-addon"><i class="fa fa-unlock-alt"></i></span>
                 <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'Password' %>
               </div>
               <p class="help-block">(leave blank if you don't want to change it)</p>
@@ -91,7 +91,6 @@
               <p class="help-block">(we need your current password to confirm your changes)</p>
 
               <%= f.submit "Update", class: 'btn btn-success btn-lg' %>
-              <%= link_to "Back Home", root_path, class: "btn btn-primary btn-lg" %>
               <% end %>
               <div>
             </div>
