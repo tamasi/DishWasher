@@ -68,13 +68,13 @@
         <tr class="active text-center week-days">
           <% @turns.last(5).each_with_index do |turn, index| %>
             <td>
-              <%= turn.date_turn.strftime("%a") %>
-              <%= turn.date_turn.to_date %>
+              <p><%= turn.date_turn.strftime("%a") %> </p>
+              <span class="date-user-list"><%= turn.date_turn.to_date %></span>
             </td>
           <% end %>
         </tr>
 
-        <tr class="active">
+        <tr class="active img-users-list">
           <% @turns.last(5).each_with_index do |turn, index| %>
             <td>
               <%= link_to admin_users_path, :data => { :toggle => 'tooltip', :placement => 'bottom', :title => turn.user.username } do %>

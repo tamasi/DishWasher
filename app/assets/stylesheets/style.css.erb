@@ -8,6 +8,7 @@
 
 body {
   background: url(' <%= asset_path("texture.jpg") %> ');
+  overflow-x: hidden;
 }
 /**************************************************************************************************************************
 ***************************************************************************************************************************
@@ -35,16 +36,27 @@ width: 700px;
   z-index: -1;
 }
 .btn-default {
-  background-color: #eda7a9;
-  color: white;
+  background-color: #664302;
+  color: #d4af6a;
   font-weight: bold;
-  border: 1px solid #d2928e;
+  border: 1px solid #553700;
+  text-shadow: none;
 }
 .btn-default:hover, .btn-default:active,.btn-default:focus,
 .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
-  background-color: #F85d5d !important;
-  border: 1px solid #ca4a4a !important;
-  color: white !important;
+  background-color: #664302 !important;
+  border: 1px solid #553700 !important;
+  color: #e5c995 !important;
+}
+#user_user_avatar {
+  height: 45px;
+  padding-top: 12px;
+}
+.page-wrapper {
+  padding-top: 33px;
+}
+.container-user {
+  padding-bottom: 32px
 }
 .container {
   margin-top: 3px;
@@ -69,10 +81,6 @@ width: 700px;
   color: #5e4500;
   background-color: #fff;
 }
-.hi-user{
-  font-size: 20px;
-  font-family: 'Indie Flower', cursive;
-}
 /**************************************************************************************************************************
 ***************************************************************************************************************************
                               CONTENT
@@ -80,6 +88,7 @@ width: 700px;
 **************************************************************************************************************************/
 .washer-list {
   list-style: none;
+  margin-top: -42px;
 }
 .washer-list li {
   margin-bottom: 10px;
@@ -199,11 +208,15 @@ h1, h2, h3, h4, h5 {
   text-align: center;
   background-color: #fff;
 }
-.washer-list li:hover {
-  transform: rotate(2deg);
-  -webkit-transform: rotate(2deg);
-  -moz-transform: rotate(2deg);
-  -o-transform: rotate(2deg);
+.washer-list li a img:hover {
+}
+.date-user-list {
+  display: block;
+  font-size: 16px;
+  line-height: 5px;
+}
+tr.img-users-list td {
+  text-align: center;
 }
 /******* TO ACTIVE THE WASHER FOR TODAY *******/
 .wash_today {
