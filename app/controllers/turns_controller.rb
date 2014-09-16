@@ -76,7 +76,7 @@ class TurnsController < ApplicationController
 
   def regenerate_turns
     team       = User.from_organization(current_user.organization).order(created_at: :asc)
-    start_date = Time.now.to_date+6
+    start_date = Time.now.to_date
 
     ::RegenerateTurns.new(team, start_date).perform
     redirect_to turns_path
