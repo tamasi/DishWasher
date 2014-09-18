@@ -36,6 +36,9 @@
                 <%= link_to "Give Vacation", new_vacation_path(@user, username: member.username), class:"btn btn-default btn-xs" %>
               </td>
               <td>
+                <%= link_to "Ascend To Admin", root_path, class:"btn btn-success btn-xs" %>
+              </td>
+              <td>
                 <%= link_to admin_user_path(member), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-warning btn-xs" do %>
                   <i class="glyphicon glyphicon-remove-circle"></i> Delete
                 <% end %>
