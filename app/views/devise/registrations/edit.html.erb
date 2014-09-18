@@ -42,9 +42,9 @@
         </div><!-- /.row -->
 
         <div class="row">
-          <div class="col-sm-6 zposition">
+          <div class="col-lg-6 zposition">
 
-            <div class="col-lg-6">
+            <div class="col-sm-6">
               <div class="container-user">
                 <% if current_user.user_avatar? %>
                   <%= image_tag current_user.user_avatar_url(:large).to_s %>
@@ -62,7 +62,7 @@
               </div>
             </div>
 
-            <div class="col-lg-6">
+            <div class="col-sm-6">
               <div class="form-group input-group">
                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
                 <%= f.text_field :username , autofocus: true, class: 'form-control', placeholder: 'user' %>
@@ -88,18 +88,23 @@
                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
                 <%= f.password_field :current_password, autocomplete: "off", class: 'form-control', placeholder: 'Current Password' %>
               </div>
-              <p class="help-block">(we need your current password to confirm your changes)</p>
 
               <%= f.submit "Update", class: 'btn btn-success btn-lg' %>
               <% end %>
-              <div>
+            </div>
+            <div class="col-sm-4 no-padding-right responsive-class-footer">
+              <%= image_tag("platos.png", class:"platos") %>
+              <%= image_tag("bar.png", class:"bar") %>
+              <div class="bar"></div>
             </div>
             <!-- Hasta AQUI formulario -->
             </div>
             <div class="clear"></div>
-            <h1>Mercy</h1>
-            <div class="breadcrumb">
-              <p>This is for change turns.</p>
+            <div class="col-lg-12">
+              <h1>Mercy</h1>
+              <div class="breadcrumb">
+                <p>This is for change turns.</p>
+              </div>
             </div>
 
             <% if current_user.is_admin == true || @user_turn_to_day.user == current_user %>
@@ -170,13 +175,16 @@
               </div>
             </div>
 
+              <p class="faqs-responsive">FAQs, Recomendation? <a href="www.hashdog.com">Please let us know</a>.</p>
+
           </div>
-            <div class="col-sm-6 no-padding-right">
-              <%= image_tag("platos.png", class:"platos") %>
-              <%= image_tag("bar.png", class:"bar") %>
-              <div class="bar"></div>
-              <p class="faqs">FAQs, Recomendation? <a href="www.hashdog.com">Please let us know</a>.</p>
-            </div>
+
+          <div class="col-sm-6 no-padding-right responsive-hide">
+            <%= image_tag("platos.png", class:"platos") %>
+            <%= image_tag("bar.png", class:"bar") %>
+            <div class="bar"></div>
+            <p class="faqs">FAQs, Recomendation? <a href="www.hashdog.com">Please let us know</a>.</p>
+          </div>
 
         </div><!-- /.row -->
 
