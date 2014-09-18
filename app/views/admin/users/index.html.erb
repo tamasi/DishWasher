@@ -17,7 +17,7 @@
         </thead>
         <tbody>
           <% @team.each do |member| %>
-            <tr>
+            <%= style_is_admin(member.is_admin) %>
               <td>
                 <%= member.username %>
               </td>
@@ -36,7 +36,7 @@
                 <%= link_to "Give Vacation", new_vacation_path(@user, username: member.username), class:"btn btn-default btn-xs" %>
               </td>
               <td>
-                <%= link_to "Toogle To Admin", root_path, class:"btn btn-success btn-xs" %>
+                <%= link_to "Toogle To Admin", toogle_admin_admin_user_path(@user, id: member.id), method: :patch, class:"btn btn-success btn-xs" %>
               </td>
               <td>
                 <%= link_to admin_user_path(member), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-warning btn-xs" do %>
