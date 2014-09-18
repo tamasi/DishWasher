@@ -24,7 +24,9 @@
             <% if index == 4 %>
               <h3 class="username"><%= turn.user.username %></h3>
             <% end %>
-            <span><p> <%= turn.date_turn.to_formatted_s(:short) %> </p></span>
+            <p>
+              <span class="responsive-username-hide"><%= turn.user.username %> <br></span>
+              <%= turn.date_turn.to_formatted_s(:short) %> </p>
           </li>
         <% end %>
       </ul>
@@ -56,7 +58,7 @@
   <!-- /END THE FEATURETTES -->
 
   <div class="col-sm-12">
-    <div class="col-sm-6 table-responsive wow animated fadeInDown">
+    <div class="col-sm-6 responsive-mode table-responsive wow animated fadeInDown">
       <div class="pendant"></div>
       <table class="table table-bordered">
         <thead class="header">
