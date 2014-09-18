@@ -30,13 +30,13 @@
                 <td><%= image_tag avatar_url(member) %></td> <%# this line call the helper to obtain the gravatar for user -- rebuild properly%>
               <% end %>
               <td>
-                <%= link_to 'ROTATE NEXT TURN', rotate_turn_with_next_washer_turns_path(@user, username: member.username), class:"btn btn-success btn-xs" %>
+                <%= link_to 'ROTATE', rotate_turn_with_next_washer_turns_path(@user, username: member.username), class:"btn btn-success btn-xs" %>
               </td>
               <td>
                 <%= link_to "Give Vacation", new_vacation_path(@user, username: member.username), class:"btn btn-default btn-xs" %>
               </td>
               <td>
-                <%= link_to "Ascend To Admin", root_path, class:"btn btn-success btn-xs" %>
+                <%= link_to "Toogle To Admin", root_path, class:"btn btn-success btn-xs" %>
               </td>
               <td>
                 <%= link_to admin_user_path(member), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-warning btn-xs" do %>
