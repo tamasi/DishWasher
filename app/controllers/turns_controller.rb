@@ -83,9 +83,15 @@ class TurnsController < ApplicationController
   end
 
   def rotate_turn_with_next_washer
-    user = current_user
-    ::RotateTurnWithNextWasher.new(user).perform
-    redirect_to root_path
+    if params[:username] == nil
+      user = current_user
+      ::RotateTurnWithNextWasher.new(user).perform
+      redirect_to root_path
+    else
+      user = User.find_by(username: params[:username])
+      ::RotateTurnWithNextWasher.new(user).perform
+      redirect_to root_path
+    end
   end
 
   private
