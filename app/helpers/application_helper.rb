@@ -16,4 +16,12 @@ module ApplicationHelper
       "img-rounded next-washer falling-next-#{index}"
     end
   end
+
+  def style_is_admin(is_admin)
+    if is_admin == true
+      '<tr class= "success">'
+    else
+      '<tr>'
+    end
+  end
 end

@@ -11,7 +11,11 @@ Rails.application.routes.draw do
   resources :organizations
 
   namespace :admin do
-    resources :users
+    resources :users do
+      member do
+        patch :toogle_admin
+      end
+    end
   end
 
   resources :vacations, only: [:index, :show, :new, :create]

@@ -54,6 +54,14 @@ class Admin::UsersController < Admin::BaseController
     end
   end
 
+  def toogle_admin
+    @user          = find_user
+    @user.is_admin = true
+    @user.save
+
+    redirect_to admin_users_path
+  end
+
   protected
     def user_params
       params.require(:user).permit(:username, :email, :password, :password_confirmation)
