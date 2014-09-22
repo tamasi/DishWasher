@@ -71,7 +71,7 @@
           <% @turns.last(5).each_with_index do |turn, index| %>
             <td>
               <p><%= turn.date_turn.strftime("%a") %> </p>
-              <span class="date-user-list"><%= turn.date_turn.to_date %></span>
+              <span class="date-user-list"><%= turn.date_turn.to_date.to_formatted_s(:short) %></span>
             </td>
           <% end %>
         </tr>
