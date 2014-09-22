@@ -21,7 +21,10 @@ For more info and more free Bootstrap 3 HTML themes, visit http://startbootstrap
 .input-group-addon:first-child {
   color: $brown
 }
-
+.navbar {
+  margin-left: 0 !important;
+  margin-top: 0 !important;
+}
 /* Nav Messages */
 
 .messages-dropdown .dropdown-menu .message-preview .avatar,
@@ -214,6 +217,16 @@ a.navbar-brand:hover .fa-arrow-circle-left {
 .faqs-responsive {
   display: none
 }
+.responsive-hide {
+  position: absolute;
+  top: 160px;
+  right: 0;
+}
+.panel {
+  border: 1px solid $brown;
+}
+/********************* RESPONSIVE SECTION **************************/
+
 /* Edit Below to Customize Widths > 768px */
 @media (max-width: 1430px) {
   .platos {
@@ -321,5 +334,17 @@ a.navbar-brand:hover .fa-arrow-circle-left {
 }
 
 @media (max-width:320px) {
-
+  #page-wrapper {
+    padding-top: 0px;
+  }
+  .navbar-inverse .navbar-brand {
+    color: #fff;
+  }
+  .responsive-class-footer {
+    position: relative;
+    z-index: -1;
+  }
+  .spacing-top {
+    margin-top: 64px;
+  }
 }
