@@ -787,9 +787,11 @@ footer .dev{
 .responsive-username-hide, .responsive-logo {
   display: none;
 }
-.navbar-toggle {
-  background-color: $brown;
-  color: #fff;
+.mobile-nav {
+  display: none
+}
+.single-nav {
+  display: block;
 }
 /****************************************** RESPONSIVE MODE ********************************/
 
@@ -843,6 +845,33 @@ footer .dev{
   .navbar {
     margin-top: 0;
   }
+  .mobile-nav {
+    display: block
+  }
+  .single-nav {
+    display: none;
+  }
+  .navbar {
+    background-color: $brown;
+    margin: 0px;
+  }
+  .navbar-toggle {
+    background-color: $brown-light;
+    color: #fff;
+  }
+  .navbar-toggle .icon-bar {
+    background-color: #fff;
+  }
+  .table-responsive {
+    border: none;
+  }
+  .navbar-nav li a {
+    text-transform: uppercase;
+    color: $brown-light;
+  }
+  header {
+    margin-top: 8px;
+  }
   .logo-middle img {
     width: 80%;
   }
@@ -880,5 +909,20 @@ footer .dev{
   }
   .responsive-logo {
     display: block;
+  }
+  .pendant {
+    margin-bottom: -70px;
+  }
+  .week-days {
+    font-size: 17px;
+  }
+  .date-user-list {
+    font-size: 10px;
+  }
+  footer {
+    margin-top: 20px;
+  }
+  footer .comp, footer .dev {
+    font-size: 10px
   }
 }
