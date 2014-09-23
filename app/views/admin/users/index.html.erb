@@ -17,7 +17,11 @@
         </thead>
         <tbody>
           <% @team.each do |member| %>
-            <%= style_is_admin(member.is_admin) %>
+          <% if member.is_admin == true %>
+            <tr class='success'>
+          <%else%>
+            <tr>
+          <% end %>
               <td>
                 <%= member.username %>
               </td>
