@@ -7,7 +7,7 @@ namespace :notification_turn do
         organization = turn.user.organization
         puts user
         puts organization
-				::WasherMail.turn_mail(user, organization)
+				::WasherMail.turn_mail(user, organization).deliver
 			end
 		end
 end
