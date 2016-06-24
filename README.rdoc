@@ -1,3 +1,4 @@
 == DISH WASHER
 
 app to organize shifts for dishwashing
+{<img src="https://beerpay.io/tamasi/DishWasher/badge.svg?style=beer-square" />}[https://beerpay.io/tamasi/DishWasher]
